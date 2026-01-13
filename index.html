@@ -1,1361 +1,1949 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>Leazo – Rent PS5</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-       iframe {
-        width: 100%;
-        max-width: 768px;
-        height: 1200px;
-        border: none;
-        margin: 0 auto;
-        display: block;
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Leazo – Rent PS5</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    iframe {
+      width: 100%;
+      max-width: 768px;
+      height: 1200px;
+      border: none;
+      margin: 0 auto;
+      display: block;
+    }
+
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+
+    section[id] {
+      scroll-margin-top: 50px;
+    }
+
+    @supports (-webkit-touch-callout: none) {
+      input[type="date"] {
+        -webkit-appearance: none;
+        appearance: none;
+        height: 44px;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
       }
-      html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-  }
-      body {
-    overflow-x: hidden;
-}
+    }
 
-      section[id]{scroll-margin-top: 50px;
-                 }
-      @supports (-webkit-touch-callout: none) {
-  input[type="date"] {
-    -webkit-appearance: none;
-    appearance: none;
-    height: 44px;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-  }
-}
-
-  .game-img:focus {
-    outline: none !important;
-    box-shadow: none !important;
-  }
-
-
-</style>
+    .game-img:focus {
+      outline: none !important;
+      box-shadow: none !important;
+    }
+  </style>
 
   <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
   <link rel="icon" href="favicon.png" type="image/png">
-    
+
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
-<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <!-- Performance hints -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="dns-prefetch" href="//fonts.gstatic.com">
+  <link rel="preload" as="image" href="mandsaur.webp">
+  <link rel="preload" as="image" href="pratapgarh.webp">
+  <link rel="preload" as="image" href="neemuch.webp">
+  <link rel="preload" as="image" href="ps5-slimmobile.webp">
+  <link rel="preload" as="image" href="ps5-slimfordesktop.webp">
+  <link rel="preload" as="image" href="gow1.webp">
+  <link rel="preload" as="image" href="f1.webp">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JPKZWZL4MZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-JPKZWZL4MZ');
+  </script>
+  <!-- Meta Pixel Code -->
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '596729610157061');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=596729610157061&ev=PageView&noscript=1" /></noscript>
+  <!-- End Meta Pixel Code -->
 </head>
-  <body class="bg-white text-gray-900 font-sans pt-12 overflow-x-hidden">
-    <!-- Header -->
-    <header class="w-full fixed top-0 z-50 bg-[#FFD345] py-2 px-4 shadow-md border-b-4 border-[#393be5]">
-      <div class="container mx-auto flex justify-between items-center">
-        <a href="index.html" class="text-2xl md:text-4xl font-extrabold italic mx-auto md:mx-0" style="font-family: 'Anton', sans-serif; letter-spacing: 3px;">LEAZO</a>
-        <div class="relative md:hidden">
-  <button id="menu-toggle" class="text-lg font-medium focus:outline-none">
-    ☰
-  </button>
-  <div id="mobile-menu" class="absolute right-0 mt-2 w-48 bg-white border rounded shadow-md hidden">
-    <a href="#home" class="block px-4 py-2 hover:bg-gray-100">Home</a>
-    <a href="#booknow" class="block px-4 py-2 hover:bg-gray-100">Book Now</a>
-    <a href="#how" class="block px-4 py-2 hover:bg-gray-100">How It Works</a>
-    <a href="#contact" class="block px-4 py-2 hover:bg-gray-100">Contact Us</a> 
+
+<body class="bg-white text-gray-900 font-sans pt-12 overflow-x-hidden">
+  <div id="cityModal" class="fixed inset-0 bg-black/50 flex items-center justify-center z-[9999]">
+    <div class="bg-white p-6 rounded-xl shadow-xl w-[90%] max-w-sm text-center relative z-50">
+      <h2 class="text-xl font-semibold mb-4">Choose Your City</h2>
+
+      <div class="grid grid-cols-3 gap-4 mb-4" id="cityIcons"></div>
+
+<div id="moreCitiesContainer" class="mt-1">
+  <p class="text-xs text-gray-500 mb-1">Also available in:</p>
+  <div id="cityPills" class="flex flex-wrap gap-2 justify-center max-h-20 overflow-y-auto px-1">
+    <!-- Pills will be inserted here -->
   </div>
 </div>
-<nav class="hidden md:flex space-x-4 text-lg font-medium justify-center md:justify-end">
-  <a href="#home" class="hover:underline">Home</a>
-  <a href="#booknow" class="hover:underline">Book Now</a>
-  <a href="#how" class="hover:underline">How It Works</a>
-  <a href="#contact" class="hover:underline">Contact Us</a>
-</nav>
-<script>
-document.getElementById('menu-toggle').addEventListener('click', function() {
-  const menu = document.getElementById('mobile-menu');
-  menu.classList.toggle('hidden');
-});
 
-document.querySelectorAll('#mobile-menu a').forEach(link => {
-  link.addEventListener('click', () => {
-    document.getElementById('mobile-menu').classList.add('hidden');
-  });
-});
-</script>
+<p class="text-xs text-gray-500 mt-3">We currently serve these cities only.</p>
+</div>
+  </div>
+  <!-- Header -->
+  <header class="w-full fixed top-0 z-50 bg-[#FFD345] py-2 px-4 shadow-md border-b-4 border-[#393be5]">
+    <div class="container mx-auto flex justify-between items-center">
+      <a href="index.html" class="text-2xl md:text-4xl font-extrabold italic mx-auto md:mx-0"
+        style="font-family: 'Anton', sans-serif; letter-spacing: 3px;">LEAZO</a>
+      <div class="relative md:hidden">
+        <button id="menu-toggle" class="text-lg font-medium focus:outline-none">
+          ☰
+        </button>
+        <div id="mobile-menu" class="absolute right-0 mt-2 w-48 bg-white border rounded shadow-md hidden">
+          <a href="#home" class="block px-4 py-2 hover:bg-gray-100">Home</a>
+          <a href="#booknow" class="block px-4 py-2 hover:bg-gray-100">Book Now</a>
+          <!--<a href="#how" class="block px-4 py-2 hover:bg-gray-100">How It Works</a>-->
+          <a href="referral-portal.html" class="block px-4 py-2 hover:bg-gray-100">Refer & Earn</a>
+          <a href="#contact" class="block px-4 py-2 hover:bg-gray-100">Contact Us</a>
+        </div>
       </div>
-    </header>
+      <nav class="hidden md:flex space-x-4 text-lg font-medium justify-center md:justify-end">
+        <a href="#home" class="hover:underline">Home</a>
+        <a href="#booknow" class="hover:underline">Book Now</a>
+        <a href="referral-portal.html" class="hover:underline">Refer & Earn</a>
+        <!--<a href="#how" class="hover:underline">How It Works</a>-->
+        <a href="#contact" class="hover:underline">Contact Us</a>
+      </nav>
+      <script>
+        document.getElementById('menu-toggle').addEventListener('click', function () {
+          const menu = document.getElementById('mobile-menu');
+          menu.classList.toggle('hidden');
+        });
 
-
-    <!-- Hero Section -->
-    <!-- Hero Section -->
-<section id="home" class="text-center pt-6 pb-4 bg-gray-100 text-white relative">
-  <div class="text-2xl md:text-4xl font-bold text-black mb-4 tracking-tight leading-snug">
-    Get Your Game On – Rent the PS5 Now
-  </div>
-  <p class="text-sm md:text-lg text-red-700 font-bold mb-2">
-    Launch Offer: Flat 50% Off – Limited Time Only!
-  </p>
-  <div class="flex justify-center mb-6 relative w-fit mx-auto">
-    <div class="absolute inset-0 rounded-full bg-gradient-to-r from-[#FFD345] via-white to-[#393be5] blur-2xl opacity-40 scale-125 z-0"></div>
-    <img src="ps5-slimmobile.png" alt="PS5 Slim Mobile" class="block md:hidden w-full max-w-lg object-contain relative z-10" />
-    <img src="ps5-slimfordesktop.png" alt="PS5 Slim Desktop" class="hidden md:block w-full max-w-full object-contain relative z-10" />
-  </div>
-  <h2 class="text-2xl md:text-4xl font-bold mb-4 text-black">Kharido Mat, Leazo Karo</h2>
-  <p class="text-lg md:text-2xl leading-snug tracking-tight mb-2 text-gray-700">Starting at ₹99/hour</p>
-  <a href="#booknow" class="mt-2 mb-4 inline-block bg-black text-white px-6 py-3 rounded-full text-sm md:text-base transition duration-200 ease-in-out transform hover:scale-105 hover:bg-gray-800 font-semibold">Book Now</a>
-
-  <!-- Bottom corner images -->
-  <img src="gow1.png" alt="Left Corner" class="absolute bottom-0 left-0 w-36 sm:w-40 md:w-72 h-auto z-20 md:left-20">
-  <img src="f1.png" alt="Right Corner" class="absolute bottom-0 right-0 w-[9.5rem] sm:w-40 md:w-72 h-auto z-20 md:right-20">
-</section>
-
-
-    <!-- Select Plan -->
-    <section id="booknow" class="px-4 pt-6 pb-16">
-      <div class="container mx-auto text-center">
-        <h3 class="text-2xl md:text-3xl font-bold mb-5">Select a Plan</h3>
- 
-        <div class="flex flex-wrap justify-center gap-6 px-4 w-full">
-
-          
-
-<div data-plan="hourly" class="relative border rounded-xl p-6 w-full max-w-xs flex flex-col justify-between items-center text-center transition duration-200 ease-in-out transform md:hover:scale-105 shadow-sm border-b-4 border-black">
-  <div class="absolute top-2 right-2 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded">50% OFF</div>
-            <h4 class="text-3xl font-semibold">🕒<br>Hourly Plan</h4>
-<p class="text-2xl font-semibold mt-1">₹199/hr</p>
-           <button onclick="toggleDetails(this)" data-plan="hourly" class="plan-btn mt-4 mb-3 inline-block bg-black text-white px-5 py-2 rounded-full text-sm md:text-base transition duration-200 ease-in-out transform hover:scale-105 hover:bg-gray-800 font-semibold">
-  Select
-</button>
-
-
-        <ul class="list-disc pl-5 text-left text-black font-semibold leading-relaxed text-base">
-          <li>Minimum 2 hours booking</li>
-          <li>1 Game Included</li>
-          <li><span class="text-green-600 font-semibold">Best for Free time</span></li>
-        </ul>
-        <div class="w-full flex overflow-hidden shadow-md border rounded-lg mt-4 border border-[#393be5]">
-  <!-- Left Section -->
-  <div class="bg-yellow-400 text-black flex flex-col justify-center items-center px-3 py-2 w-1/3 relative">
-    <div class="flex items-center gap-2">
-      <p class="text-sm font-medium">Offer</p>
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+          link.addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.add('hidden');
+          });
+        });
+      </script>
     </div>
-    <p class="text-2xl md:text-3xl font-bold">₹99</p>
-  </div>
+  </header>
 
-  <!-- Right Section -->
-  <div class="bg-black text-white flex items-center justify-between px-4 py-3 w-2/3 relative">
-    <p class="text-sm md:text-base leading-tight">
-      Use code <span class="font-bold">LEAZO</span><br>
-      and get extra 50% off
+
+  <!-- Hero Section -->
+  <!-- Hero Section -->
+  <section id="home" class="text-center pt-6 pb-4 bg-gray-100 text-white relative">
+    <div class="text-2xl md:text-4xl font-bold text-black mb-4 tracking-tight leading-snug">
+      Get Your Game On – Rent the PS5 Now
+    </div>
+    <p class="text-sm md:text-lg text-red-700 font-bold mb-2">
+      Launch Offer: Flat 50% Off – Limited Time Only!
     </p>
-  </div>
-</div>
+    <div class="flex justify-center mb-6 relative w-fit mx-auto">
+      <div
+        class="absolute inset-0 rounded-full bg-gradient-to-r from-[#FFD345] via-white to-[#393be5] blur-2xl opacity-40 scale-125 z-0">
+      </div>
+      <img src="ps5-slimmobile.webp" alt="PS5 Slim Mobile"
+        class="block md:hidden w-full max-w-lg object-contain relative z-10" / fetchpriority="high" decoding="async">
+      <img src="ps5-slimfordesktop.webp" alt="PS5 Slim Desktop"
+        class="hidden md:block w-full max-w-full object-contain relative z-10" / fetchpriority="high" decoding="async">
+    </div>
+    <h2 class="text-2xl md:text-4xl font-bold mb-4 text-black">Kharido Mat, Leazo Karo</h2>
+    <p class="text-lg md:text-2xl leading-snug tracking-tight mb-2 text-gray-700">Starting at only ₹199 per day*</p>
+    <a href="#booknow"
+      class="mt-2 mb-4 inline-block bg-black text-white px-6 py-3 rounded-full text-sm md:text-base transition duration-200 ease-in-out transform hover:scale-105 hover:bg-gray-800 font-semibold">Book
+      Now</a>
+
+    <!-- Bottom corner images -->
+    <img src="gow1.webp" alt="Left Corner" class="absolute bottom-0 left-0 w-36 sm:w-40 md:w-72 h-auto z-20 md:left-20">
+    <img src="f1.webp" alt="Right Corner"
+      class="absolute bottom-0 right-0 w-[9.5rem] sm:w-40 md:w-72 h-auto z-20 md:right-20">
+      <p class="absolute bottom-[2px] right-1  text-[5px] sm:text-[7px] text-gray-500 leading-none">
+    * Exact rate: ₹199.67/day (calculated from monthly Plan's 30 days)
+    </p>
+  </section>
+
+
+  <!-- Select Plan -->
+  <section id="booknow" class="px-4 pt-6 pb-16">
+    <div class="container mx-auto text-center">
+      <h3 class="text-2xl md:text-3xl font-bold mb-5">Select a Plan</h3>
+
+      <div id="plansContainer" class="flex flex-wrap justify-center gap-6 px-4 w-full">
+
+
+
+      </div>
+    </div>
+  </section>
+
+  <!-- START OF UPDATED MULTISTEP BOOKING MODAL -->
+  <div id="bookingModal" class="fixed inset-0 z-50 bg-black bg-opacity-60 flex items-center justify-center hidden px-4">
+    <form id="bookingForm" action="https://formcarry.com/s/mNJ2DZIHpc" method="POST"
+      class="relative bg-white rounded-lg w-full max-w-2xl shadow-xl flex flex-col max-h-[90vh] overflow-hidden">
+      <!-- Modal Header with Seamless Background -->
+      <div class="sticky top-0 z-10 bg-[#FFD345] border-b-4 border-[#393be5] rounded-t-lg px-6 py-2">
+        <div class="flex justify-between items-center">
+          <h2
+            class="absolute left-1/2 transform -translate-x-1/2 text-2xl font-bold text-gray-800 font-sans tracking-normal whitespace-nowrap">
+            Book Now
+          </h2>
+          <button onclick="closeBooking()" type="button"
+            class="text-2xl text-gray-700 hover:text-black font-bold ml-auto">
+            ×
+          </button>
+        </div>
+      </div>
+
+
+      <div class="flex-1 overflow-y-auto px-4 py-1 space-y-3">
+        <input type="hidden" name="Selected Plan" id="selectedPlanInput" />
+
+
+
+        <!-- STEP 1: Game + Date/Time -->
+        <div id="step1">
+          <!-- plan name -->
+          <div id="selectedPlanDisplay" class="text-xl text-center font-semibold text-gray-800 mb-3"></div>
+
+          <!-- Game Selection -->
+          <div class="flex justify-between items-center mb-2">
+            <label class="font-semibold text-gray-700">Select Game(s):</label>
+
+            <!-- Multiplayer toggle -->
+            <div class="flex items-center space-x-2 text-sm">
+              <span class="text-gray-600">2 Player Games</span>
+
+              <label class="relative inline-flex items-center cursor-pointer">
+                <input type="checkbox" id="filterMultiplayer" class="sr-only peer">
+                <div
+                  class="w-11 h-6 bg-gray-300 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-blue-500 rounded-full peer peer-checked:bg-blue-600 transition-all duration-300">
+                </div>
+                <div
+                  class="absolute left-0.5 top-0.5 w-5 h-5 bg-white rounded-full shadow peer-checked:translate-x-full transition-transform duration-300">
+                </div>
+              </label>
+            </div>
           </div>
-          
 
-<div data-plan="day" class="relative border rounded-xl p-6 w-full max-w-xs flex flex-col justify-between items-center text-center transition duration-200 ease-in-out transform md:hover:scale-105 shadow-sm border-b-4 border-black">
-  <div id="dayPlanBadge" class="absolute top-2 right-2 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded">₹500 OFF</div>
-            <h2 class="text-3xl font-semibold">☀️<br>Day Plan</h2>
-<p id="dayPlanPrice" class="text-2xl font-semibold mt-1">₹999/day</p>
-           <button onclick="toggleDetails(this)" data-plan="day" class="plan-btn mt-4 mb-5 inline-block bg-black text-white px-5 py-2 rounded-full text-sm md:text-base transition duration-200 ease-in-out transform hover:scale-105 hover:bg-gray-800 font-semibold">
-  Select
-</button>
 
-        <ul id="dayPlanDescrip" class="list-disc pl-5 text-left text-black font-semibold leading-relaxed text-base">
-           <li id="dayTimeDescrip">Morning 11 AM - Evening 8 PM </li>
-          <li>1 Game Included</li>
-          <li><span class="text-green-600 font-semibold">Best for holidays gaming</span></li>
-        </ul>
-      
+          <div class="relative">
+            <!-- Scroll gradient indicators -->
+            <div
+              class="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none">
+            </div>
+            <div
+              class="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none">
+            </div>
 
-<div class="w-full flex overflow-hidden shadow-md border rounded-lg mt-4 border border-[#393be5]">
-  <!-- Left Section -->
-  <div class="bg-yellow-400 text-black flex flex-col justify-center items-center px-3 py-2 w-1/3 relative">
-    <div class="flex items-center gap-2">
-      <p class="text-sm font-medium">Offer</p>
-    </div>
-    <p id="dayOfferPrice" class="text-2xl md:text-3xl font-bold">₹499</p>
-  </div>
+            <div id="game-selection" class="flex overflow-x-auto space-x-4 px-2 py-2 snap-x scroll-smooth">
 
-  <!-- Right Section -->
-  <div class="bg-black text-white flex items-center justify-between px-4 py-3 w-2/3 relative">
-    <p id="dayCouponCard" class="text-sm md:text-base leading-tight">
-      Use code <span class="font-bold">LEAZO</span><br>
-      and get extra ₹500 off
-    </p>
-  </div>
-</div>
+            </div>
+          </div>
+
+          <p class="text-xs text-gray-500 text-center mb-1">⬅️ Swipe to see more games ➡️</p>
+          <script>
+            const games = [
+              { name: "GTA 5", img: "gta5.webp", multiplayer: false, price: 49, allowedPlans: ["hourly", "day", "night", "daynight", "weekly", "halfmonth", "monthly"] },
+              { name: "WWE 2K25", img: "wwe2k25.webp", multiplayer: true, price: 49, allowedPlans: ["day", "night", "daynight", "weekly", "halfmonth", "monthly"] },
+              { name: "FIFA (FC25)", img: "fifa.webp", multiplayer: true, price: 49, allowedPlans: ["day", "night", "daynight", "weekly", "halfmonth", "monthly"] },
+              { name: "God of War", img: "godofwar.webp", multiplayer: false, price: 49, allowedPlans: ["day", "night", "daynight", "weekly", "halfmonth", "monthly"] },
+              { name: "UFC 4", img: "ufc4.webp", multiplayer: true, price: 49, allowedPlans: ["day", "night", "daynight", "weekly", "halfmonth", "monthly"] },
+              { name: "Spiderman 2", img: "spiderman2.webp", multiplayer: false, price: 49, allowedPlans: ["day", "night", "daynight", "weekly", "halfmonth", "monthly"] },
+              { name: "F1 24", img: "f124.webp", multiplayer: true, price: 49, allowedPlans: ["day", "night", "daynight", "weekly", "halfmonth", "monthly"] },
+              { name: "It Takes Two", img: "ittakestwo.webp", multiplayer: true, price: 49, allowedPlans: ["daynight", "weekly", "halfmonth", "monthly"] },
+              { name: "Need for Speed", img: "needforspeed.webp", multiplayer: false, price: 49, allowedPlans: ["hourly", "day", "night", "daynight", "weekly", "halfmonth", "monthly"] },
+              { name: "SW Jedi: Survivor", img: "starwarsjedisurvivor.webp", multiplayer: false, price: 49, allowedPlans: ["day", "night", "daynight", "weekly", "halfmonth", "monthly"] },
+              { name: "SW Jedi: Fallen Order", img: "starwarsjedifallenorder.webp", multiplayer: false, price: 49, allowedPlans: ["day", "night", "daynight", "weekly", "halfmonth", "monthly"] },
+              { name: "SW Battlefront II", img: "starwarsbattlefrontii.webp", multiplayer: true, price: 49, allowedPlans: ["daynight", "weekly", "halfmonth", "monthly"] },
+              { name: "SW Jedi: Squadrons", img: "starwarsjedisquadrons.webp", multiplayer: false, price: 49, allowedPlans: ["day", "night", "daynight", "weekly", "halfmonth", "monthly"] },
+              { name: "Battlefield 2042", img: "battlefield2042.webp", multiplayer: false, price: 49, allowedPlans: ["weekly", "halfmonth", "monthly"] },
+              { name: "Battlefield V", img: "battlefieldv.webp", multiplayer: false, price: 49, allowedPlans: ["weekly", "halfmonth", "monthly"] }
+            ];
+
+
+            const gameSelection = document.getElementById("game-selection");
+
+            // 🔄 Function to render games dynamically
+            function renderGamesForPlan(selectedPlan) {
+              gameSelection.innerHTML = ""; // clear previous list
+
+              const allowedGames = games.filter(g => g.allowedPlans.includes(selectedPlan));
+
+              if (allowedGames.length === 0) {
+                gameSelection.innerHTML = `<p class="text-gray-600 text-center w-full py-4">No games available for this plan.</p>`;
+                return;
+              }
+
+              allowedGames.forEach(game => {
+                const label = document.createElement("label");
+                label.className = "game-card min-w-[100px] flex-shrink-0 cursor-pointer text-center snap-center";
+                label.dataset.multiplayer = game.multiplayer;
+
+                label.innerHTML = `
+      <img src="${game.img}" alt="${game.name}"
+        class="game-img w-20 h-20 rounded-lg object-cover border-2 border-gray-200 mx-auto"
+        loading="lazy" decoding="async" width="80" height="80">
+      <input type="checkbox" name="Games[]" value="${game.name}"
+        class="hidden game-checkbox" data-price="${game.price}" />
+      <span class="text-sm block mt-1 text-gray-800 font-semibold">${game.name}</span>
+      <span class="text-xs text-gray-500 block">₹${game.price}</span>
+    `;
+
+                gameSelection.appendChild(label);
+              });
+
+              // ✅ Blue ring + toast logic
+              const gameCards = document.querySelectorAll(".game-card");
+              let limitToastShown = false; // 🟢 Show toast only once after limit crossed
+
+              gameCards.forEach(card => {
+                const img = card.querySelector("img");
+                const checkbox = card.querySelector("input[type='checkbox']");
+
+                card.addEventListener("click", () => {
+                  checkbox.checked = !checkbox.checked;
+                  img.classList.toggle("ring", checkbox.checked);
+                  img.classList.toggle("ring-[2.5px]", checkbox.checked);
+                  img.classList.toggle("ring-[#393be5]", checkbox.checked);
+
+                  const selectedCount = document.querySelectorAll(".game-checkbox:checked").length;
+                  const plan = document.getElementById("selectedPlanInput").value;
+
+                  const freeLimit = FREE_GAME_LIMITS[plan] || 2;
+
+
+                  // ✅ Show toast only ONCE when crossing the limit
+                  if (selectedCount > freeLimit && !limitToastShown) {
+                    showToast(`Only ${freeLimit} games are free\nExtra games are chargeable`);
+                    limitToastShown = true;
+                  }
+
+                  // ✅ Reset flag if user unchecks games (goes back below limit)
+                  if (selectedCount <= freeLimit) {
+                    limitToastShown = false;
+                  }
+                });
+              });
+            }
+
+
+          </script>
+
+
+
+          <script>
+            document.getElementById('filterMultiplayer').addEventListener('change', function () {
+              const showOnlyMultiplayer = this.checked;
+
+              document.querySelectorAll('.game-card').forEach(card => {
+                const isMultiplayer = card.dataset.multiplayer === 'true';
+                card.classList.toggle('hidden', showOnlyMultiplayer && !isMultiplayer);
+              });
+            });
+          </script>
+
+
+
+
+          <div id="controller-option" class="hidden mt-3">
+            <label for="addController"
+              class="group flex items-center gap-4 rounded-2xl border border-gray-300 bg-white px-4 py-3 shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer">
+
+              <img src="dualsense.webp" alt="DualSense Controller" class="w-16 h-16 object-contain">
+
+              <div class="flex flex-col flex-1">
+                <span class="text-md font-semibold text-gray-800">Add Extra Controller</span>
+                <span class="text-sm text-gray-500">Required for 2 players</span>
+                <span id="controller-price-text" class="text-base font-medium text-blue-600 mt-1">₹99</span>
+              </div>
+
+              <input type="checkbox" id="addController"
+                class="w-5 h-5 text-blue-600 rounded-md border-gray-300 focus:outline-none focus:ring-blue-700"
+                aria-describedby="controller-desc controller-price" />
+            </label>
+          </div>
+
+
+
+          <div class="w-full mt-3 mb-4">
+            <label class="block mb-2 font-semibold text-gray-700">Select Date:</label>
+            <input type="text" id="booking-date" name="booking-date" placeholder="Select date"
+              class="w-full border-[1.5px] rounded-lg px-4 py-2 text-gray-700 text-base cursor-pointer focus:outline-none focus:ring-blue-700 focus:border-blue-700"
+              readonly />
 
           </div>
-          <div data-plan="night"class="relative border rounded-xl p-6 w-full max-w-xs flex flex-col justify-between items-center text-center transition duration-200 ease-in-out transform md:hover:scale-105 shadow-sm border-b-4 border-black">
-  <div id="nightPlanBadge"class="absolute top-2 right-2 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded">₹800 OFF</div>
-  <h4 class="text-3xl font-semibold">🌃<br>Night Plan</h4>
-<p id="nightPlanPrice" class="text-2xl font-semibold mt-1">₹1499/night</p>
 
-<button onclick="toggleDetails(this)" data-plan="night" class="mt-4 mb-3 inline-block bg-black text-white px-5 py-2 rounded-full text-sm md:text-base transition duration-200 ease-in-out transform hover:scale-105 hover:bg-gray-800 font-semibold">Select</button>
+          <div id="hourly-time-inputs" class="hidden">
+            <div class="flex flex-row flex-wrap gap-4 w-full">
+              <div class="flex-1">
+                <label class="block mb-1 font-semibold text-gray-700">Delivery Time:</label>
+                <select id="startTime" name="start-time" required
+                  class="w-full border-[1.5px] rounded-lg px-4 py-2 text-gray-700 focus:outline-none focus:ring-blue-700 focus:border-blue-700">
+                  <option value="">-- Select --</option>
+                </select>
+              </div>
+              <div class="flex-1">
+                <label class="block mb-1 font-semibold text-gray-700">Return Time:</label>
+                <select id="endTime" name="end-time" required
+                  class="w-full border-[1.5px] rounded-lg px-4 py-2 text-gray-700 focus:outline-none focus:ring-blue-700 focus:border-blue-700 mb-4"
+                  disabled>
+                  <option value="">-- Select --</option>
+                </select>
+              </div>
+            </div>
+          </div>
 
-          <ul class="list-disc pl-5 text-left text-black font-semibold leading-relaxed text-base mt-2">
-          <li>Night 9 PM - Morning 10 AM </li>
-          <li>1 Game Included</li>
-          <li><span class="text-green-600 font-semibold">Best for night hangouts</span></li>
-        </ul>
 
-        <div class="w-full flex overflow-hidden shadow-md border rounded-lg mt-4 border border-[#393be5]">
-  <!-- Left Section -->
-  <div class="bg-yellow-400 text-black flex flex-col justify-center items-center px-3 py-2 w-1/3 relative">
-    <div class="flex items-center gap-2">
-      <p class="text-sm font-medium">Offer</p>
-    </div>
-    <p id="nightOfferPrice" class="text-2xl md:text-3xl font-bold">₹699</p>
-  </div>
 
-  <!-- Right Section -->
-  <div class="bg-black text-white flex items-center justify-between px-4 py-3 w-2/3 relative">
-    <p id="nightCouponCard" class="text-sm md:text-base leading-tight">
-      Use code <span class="font-bold">LEAZO</span><br>
-      and get extra ₹800 off
-    </p>
-  </div>
-</div>
-          
-       
+
+          <div id="fixed-time-display" class="hidden mb-4">
+            <div class="flex gap-4">
+              <div class="w-full">
+                <label id="fixedStartLabel" class="block mb-1 text-sm font-medium text-gray-700">Delivery Time:</label>
+                <input id="fixedStartTime" type="text" disabled
+                  class="w-full border rounded-lg px-4 py-2 text-gray-700 opacity-70 focus:outline-none focus:ring-blue-700 focus:border-blue-700 cursor-not-allowed" />
+              </div>
+              <div class="w-full">
+                <label id="fixedEndLabel" class="block mb-1 text-sm font-medium text-gray-700">Return Time:</label>
+                <input id="fixedEndTime" type="text" disabled
+                  class="w-full border rounded-lg px-4 py-2 text-gray-700 opacity-70 cursor-not-allowed" />
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="sticky bottom-0 bg-white px-4 py-3 border-t border-gray-300 -mx-4 pb-2">
+            <div class="text-right">
+              <button type="button" id="nextToStep2"
+                class="bg-black text-white font-medium px-5 py-1 rounded-full hover:bg-gray-800 transition">Next</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 2: Delivery Details -->
+        <div id="step2" class="hidden">
+          <div class="space-y-4">
+
+            <!-- Each input uses floating label, rounded corners, slim height -->
+            <!-- Adjusted font weight: grey placeholders normal, floating labels bold -->
+            <div class="flex items-center space-x-1 mb-3">
+              <img src="location.webp" alt="Location" class="h-6 w-6">
+              <h2 class="text-lg font-semibold text-gray-800">Deliver To</h2>
+            </div>
+            <!-- Address Input -->
+            <div class="relative">
+              <input type="text" name="address-line" id="address-line" required
+                placeholder="House name / Colony / Street"
+                class="peer w-full border-[1.5px] rounded-lg px-4 py-2 text-gray-800 placeholder-transparent focus:outline-none focus:border-blue-700" />
+              <label for="address-line"
+                class="absolute left-3 -top-2.5 bg-white px-1 text-xs text-blue-600 font-medium transition-all duration-200
+        peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:bg-transparent
+        peer-placeholder-shown:font-normal
+        peer-focus:-top-2.5 peer-focus:text-xs peer-focus:text-blue-600 peer-focus:bg-white peer-focus:font-medium cursor-text">
+                House name / Colony / Street *
+              </label>
+            </div>
+
+
+            <!-- Name -->
+            <div class="relative">
+              <input type="text" name="name" id="name" required placeholder="Full Name"
+                class="peer w-full border-[1.5px] rounded-lg px-4 py-2 text-gray-800 placeholder-transparent focus:outline-none focus:border-blue-700" />
+              <label for="name"
+                class="absolute left-3 -top-2.5 bg-white px-1 text-xs text-blue-600 font-medium transition-all duration-200
+        peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:bg-transparent
+        peer-placeholder-shown:font-normal
+        peer-focus:-top-2.5 peer-focus:text-xs peer-focus:text-blue-600 peer-focus:bg-white peer-focus:font-medium cursor-text">
+                Full Name *
+              </label>
+            </div>
+
+            <!-- Phone -->
+            <div class="relative">
+              <input type="tel" name="phone" id="phone" required inputmode="numeric" pattern="\d{10}" maxlength="10"
+                placeholder="Phone Number"
+                class="peer w-full border-[1.5px] rounded-lg px-4 py-2 text-gray-800 placeholder-transparent focus:outline-none focus:border-blue-700" />
+              <label for="phone"
+                class="absolute left-3 -top-2.5 bg-white px-1 text-xs text-blue-600 font-medium transition-all duration-200
+        peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:bg-transparent
+        peer-placeholder-shown:font-normal
+        peer-focus:-top-2.5 peer-focus:text-xs peer-focus:text-blue-600 peer-focus:bg-white peer-focus:font-medium cursor-text">
+                Phone Number *
+              </label>
+            </div>
+          </div>
+
+          <div class="mt-6"></div>
+          <!-- Buttons with proper spacing below inputs -->
+          <div class="sticky bottom-0 bg-white px-4 py-3 border-t border-gray-300 -mx-4 pb-2">
+            <div class="flex justify-between">
+              <button type="button" onclick="goToStep(1)"
+                class="bg-gray-300 text-black px-5 py-1 rounded-full hover:bg-gray-400 transition">
+                Back
+              </button>
+              <button type="button" id="nextToStep3"
+                class="bg-black text-white px-5 py-1 rounded-full hover:bg-gray-800 transition">
+                Next
+              </button>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+        <!-- STEP 3: Payment & Summary -->
+        <div id="step3" class="hidden space-y-4">
+
+
+          <div class="relative border pl-3 p-2 rounded-lg bg-gray-50">
+            <button type="button" onclick="goToStep(1)"
+              class="absolute top-2 right-2 text-xs text-blue-600 border border-blue-600 rounded-xl px-2 py-0.5 hover:bg-blue-50 transition">
+              Change
+            </button>
+            <h3 class="text-md font-bold mb-1 text-gray-800">Booking Summary</h3>
+            <div id="bookingSummary" class="text-sm space-y-1 text-gray-700"></div>
+          </div>
+
+          <div>
+
+            <div class="relative">
+              <input type="text" id="couponCode" placeholder="Enter Coupon Code"
+                class="peer w-full border-[1.5px] rounded-lg pr-20 px-4 py-2 text-gray-800 placeholder-transparent focus:outline-none focus:border-blue-700"
+                oninput="updateSummary()" />
+              <label for="couponCode"
+                class="absolute left-3 -top-2.5 bg-white px-1 text-xs text-blue-600 font-medium transition-all duration-200
+    peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:bg-transparent
+    peer-placeholder-shown:font-normal
+    peer-focus:-top-2.5 peer-focus:text-xs peer-focus:text-blue-600 peer-focus:bg-white peer-focus:font-medium cursor-text">
+                Coupon Code
+              </label>
+              <div class="absolute inset-y-0 right-2 flex items-center translate-y-[-11.5px]">
+                <button type="button" onclick="applyCoupon()"
+                  class="bg-[#FFD345] border-[1px] border-yellow-500 text-black text-sm font-medium px-2 py-0.5 pb-1 rounded-md hover:bg-yellow-500 box-shadow shadow-lg">
+                  Apply
+                </button>
+              </div>
+              <p class="text-sm ml-1 mt-1 mb-2 text-gray-500">
+                Use coupon code '<span class="text-blue-600 font-semibold">LEAZO</span>' for flat <span
+                  id="couponAmountText" class="text-green-600 font-semibold">₹100</span> off
+              </p>
+            </div>
+
+            <div class="relative mt-4">
+              <input type="text" id="referralCodeInput" placeholder="Enter Gift Card Code"
+                class="peer w-full border-[1.5px] rounded-lg pr-20 px-4 py-2 text-gray-800 placeholder-transparent focus:outline-none focus:border-green-700"
+                oninput="updateSummary()" />
+              <label for="referralCodeInput"
+                class="absolute left-3 -top-2.5 bg-white px-1 text-xs text-green-600 font-medium transition-all duration-200
+    peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:bg-transparent
+    peer-placeholder-shown:font-normal
+    peer-focus:-top-2.5 peer-focus:text-xs peer-focus:text-green-600 peer-focus:bg-white peer-focus:font-medium cursor-text">
+                Gift Card
+              </label>
+              <div class="absolute inset-y-0 right-2 flex items-center translate-y-[-11.5px]">
+                <button type="button" onclick="applyReferral()"
+                  class="bg-green-500 border-[1px] border-green-600 text-white text-sm font-medium px-2 py-0.5 pb-1 rounded-md hover:bg-green-600 shadow-lg">
+                  Redeem
+                </button>
+              </div>
+              <p class="text-sm ml-1 mt-1 mb-2 text-gray-500">
+                Enter a valid gift code (Optional)
+              </p>
+            </div>
+
+
+
+            <div class="relative border pl-3 p-2 rounded-lg bg-gray-50">
+              <div id="summaryBreakdown" class="text-sm space-y-1 text-gray-700"></div>
+
+            </div>
+
+          </div>
+
+          <div>
+            <p class="font-semibold mb-2 text-gray-700">Select Payment Method:</p>
+
+            <div class="flex w-full gap-1">
+              <!-- UPI -->
+              <div onclick="selectPayment('upi')"
+                class="flex-1 payment-option border px-3 py-3 rounded-xl cursor-pointer hover:bg-gray-100 transition flex flex-col items-center justify-center gap-1">
+                <img src="upi.webp" alt="UPI" class="w-7 h-3.5">
+                <span class="text-md font-medium text-center leading-tight">UPI (Extra 5% Off)</span>
+              </div>
+
+              <!-- COD -->
+              <div onclick="selectPayment('cod')"
+                class="flex-1 payment-option border px-3 py-3 rounded-xl cursor-pointer hover:bg-gray-100 transition flex flex-col items-center justify-center gap-1">
+                <img src="cod.webp" alt="Cash on Delivery" class="w-6 h-3">
+                <span class="text-md font-medium text-center leading-tight">Cash on Delivery</span>
+              </div>
+            </div>
+            <input type="hidden" name="payment-method" id="paymentMethod" />
+          </div>
+
+
+
+          <div class="sticky bottom-0 bg-white px-4 py-3 border-t border-gray-300">
+            <div class="flex flex-wrap justify-between items-center gap-3">
+              <p class="text-lg md:text-xl font-bold text-gray-800 flex-shrink">
+                Total: ₹<span id="totalAmount">0</span>
+              </p>
+              <button type="submit" id="bookBtn"
+                class="bg-blue-600 text-white font-medium px-5 py-2 rounded-xl hover:bg-blue-700 transition w-full sm:w-auto">
+                Book Now
+              </button>
+            </div>
           </div>
         </div>
       </div>
-    </section>
-
-<!-- START OF UPDATED MULTISTEP BOOKING MODAL -->
-<div id="bookingModal" class="fixed inset-0 z-50 bg-black bg-opacity-60 flex items-center justify-center hidden px-4">
-  <form id="bookingForm" action="https://formcarry.com/s/15lg9WIB6XN" method="POST"
-  class="relative bg-white rounded-lg w-full max-w-2xl shadow-xl flex flex-col max-h-[90vh] overflow-hidden">
-    <!-- Modal Header with Seamless Background -->
-<div class="sticky top-0 z-10 bg-[#FFD345] border-b-4 border-[#393be5] rounded-t-lg px-6 py-2">
-  <div class="flex justify-between items-center">
-    <h2 class="absolute left-1/2 transform -translate-x-1/2 text-2xl font-bold text-gray-800 font-sans tracking-normal whitespace-nowrap">
-      Book Now
-    </h2>
-    <button onclick="closeBooking()" type="button" class="text-2xl text-gray-700 hover:text-black font-bold ml-auto">
-      ×
-    </button>
-  </div>
-</div>
-
-
-  <div class="flex-1 overflow-y-auto px-4 py-1 space-y-3">
-    <input type="hidden" name="Selected Plan" id="selectedPlanInput" />
-
-  
-
-    <!-- STEP 1: Game + Date/Time -->
-    <div id="step1">
-      <!-- plan name -->
-      <div id="selectedPlanDisplay" class="text-xl text-center font-semibold text-gray-800 mb-3"></div>
-
-      <!-- Game Selection -->
-      <div class="flex justify-between items-center mb-2">
-  <label class="font-semibold text-gray-700">Select Game(s):</label>
-
-  <!-- Multiplayer toggle -->
-  <div class="flex items-center space-x-2 text-sm">
-    <span class="text-gray-600">2 Player Games</span>
-    
-    <label class="relative inline-flex items-center cursor-pointer">
-      <input type="checkbox" id="filterMultiplayer" class="sr-only peer">
-      <div class="w-11 h-6 bg-gray-300 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-blue-500 rounded-full peer peer-checked:bg-blue-600 transition-all duration-300"></div>
-      <div class="absolute left-0.5 top-0.5 w-5 h-5 bg-white rounded-full shadow peer-checked:translate-x-full transition-transform duration-300"></div>
-    </label>
-  </div>
-</div>
 
 
 
 
-      <div class="relative">
-  <!-- Scroll gradient indicators -->
-  <div class="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
-  <div class="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
-
-      <div id="game-selection" class="flex overflow-x-auto space-x-4 px-2 py-2 snap-x scroll-smooth">
-        <!-- Each game card -->
-  <label class="game-card min-w-[100px] flex-shrink-0 cursor-pointer text-center snap-center" data-multiplayer="false">
-    <img src="gta5.jpg" alt="GTA 5"
-         class="game-img w-20 h-20 rounded-lg object-cover border-2 border-gray-200 mx-auto" />
-    <input type="checkbox" name="Games[]" value="GTA 5" class="hidden game-checkbox" data-price="99" />
-    <span class="text-sm block mt-1 text-gray-800">GTA 5</span>
-  </label>
-
-  <label class="game-card min-w-[100px] flex-shrink-0 cursor-pointer text-center snap-center" data-multiplayer="true">
-    <img src="wwe2k25.avif" alt="WWE 2K25"
-         class="game-img w-20 h-20 rounded-lg object-cover border-2 border-gray-200 mx-auto" />
-    <input type="checkbox" name="Games[]" value="WWE 2K25" class="hidden game-checkbox" data-price="99" />
-    <span class="text-sm block mt-1 text-gray-800">WWE 2K25</span>
-</label>
-
-  <label class="game-card min-w-[100px] flex-shrink-0 cursor-pointer text-center snap-center" data-multiplayer="true">
-    <img src="fifa.avif" alt="FIFA (FC25)"
-         class="game-img w-20 h-20 rounded-lg object-cover border-2 border-gray-200 mx-auto" />
-    <input type="checkbox" name="Games[]" value="FIFA (FC25)" class="hidden game-checkbox" data-price="99" />
-    <span class="text-sm block mt-1 text-gray-800">FIFA (FC25)</span>
-</label>
-
-  <label class="game-card min-w-[100px] flex-shrink-0 cursor-pointer text-center snap-center" data-multiplayer="false">
-    <img src="godofwar.jpg" alt="God of War"
-         class="game-img w-20 h-20 rounded-lg object-cover border-2 border-gray-200 mx-auto" />
-    <input type="checkbox" name="Games[]" value="God of War" class="hidden game-checkbox" data-price="99" />
-    <span class="text-sm block mt-1 text-gray-800">God of War</span>
-  </label>
-
-  <label class="game-card min-w-[100px] flex-shrink-0 cursor-pointer text-center snap-center" data-multiplayer="true">
-    <img src="ufc4.jpg" alt="UFC 4"
-         class="game-img w-20 h-20 rounded-lg object-cover border-2 border-gray-200 mx-auto" />
-    <input type="checkbox" name="Games[]" value="UFC 4" class="hidden game-checkbox" data-price="49" />
-    <span class="text-sm block mt-1 text-gray-800">UFC 4</span>
-</label>
-
-   <label class="game-card min-w-[100px] flex-shrink-0 cursor-pointer text-center snap-center" data-multiplayer="false">
-    <img src="spiderman2.jpg" alt="Spiderman 2"
-         class="game-img w-20 h-20 rounded-lg object-cover border-2 border-gray-200 mx-auto" />
-    <input type="checkbox" name="Games[]" value="Spiderman 2" class="hidden game-checkbox" data-price="99" />
-    <span class="text-sm block mt-1 text-gray-800">spiderman 2</span>
-  </label>
-
-<label class="game-card min-w-[100px] flex-shrink-0 cursor-pointer text-center snap-center" data-multiplayer="true">
-    <img src="f124.avif" alt="F1 24"
-         class="game-img w-20 h-20 rounded-lg object-cover border-2 border-gray-200 mx-auto" />
-    <input type="checkbox" name="Games[]" value="F1 24" class="hidden game-checkbox" data-price="49" />
-    <span class="text-sm block mt-1 text-gray-800">F1 24</span>
-</label>
-
-
-<label class="game-card min-w-[100px] flex-shrink-0 cursor-pointer text-center snap-center" data-multiplayer="true">
-    <img src="ittakestwo.avif" alt="It Takes Two"
-         class="game-img w-20 h-20 rounded-lg object-cover border-2 border-gray-200 mx-auto" />
-    <input type="checkbox" name="Games[]" value="It Takes Two" class="hidden game-checkbox" data-price="49" />
-    <span class="text-sm block mt-1 text-gray-800">It Takes Two</span>
-</label>
-
-<label class="game-card min-w-[100px] flex-shrink-0 cursor-pointer text-center snap-center" data-multiplayer="false">
-    <img src="needforspeed.webp" alt="Need for Speed"
-         class="game-img w-20 h-20 rounded-lg object-cover border-2 border-gray-200 mx-auto" />
-    <input type="checkbox" name="Games[]" value="Need for Speed" class="hidden game-checkbox" data-price="49" />
-    <span class="text-sm block mt-1 text-gray-800">Need for Speed</span>
-</label>
-
-<label class="game-card min-w-[100px] flex-shrink-0 cursor-pointer text-center snap-center" data-multiplayer="false">
-    <img src="starwarsjedisurvivor.avif" alt="SW Jedi: Survivor"
-         class="game-img w-20 h-20 rounded-lg object-cover border-2 border-gray-200 mx-auto" />
-    <input type="checkbox" name="Games[]" value="SW Jedi: Survivor" class="hidden game-checkbox" data-price="49" />
-    <span class="text-sm block mt-1 text-gray-800">SW Jedi: Survivor</span>
-</label>
-
-<label class="game-card min-w-[100px] flex-shrink-0 cursor-pointer text-center snap-center" data-multiplayer="false">
-    <img src="starwarsjedifallenorder.avif" alt="SW Jedi: Fallen Order"
-         class="game-img w-20 h-20 rounded-lg object-cover border-2 border-gray-200 mx-auto" />
-    <input type="checkbox" name="Games[]" value="SW Jedi: Fallen Order" class="hidden game-checkbox" data-price="49" />
-    <span class="text-sm block mt-1 text-gray-800">SW Jedi: Fallen Order</span>
-</label>
-
-<label class="game-card min-w-[100px] flex-shrink-0 cursor-pointer text-center snap-center" data-multiplayer="true">
-    <img src="starwarsbattlefrontii.avif" alt="SW Battlefront II"
-         class="game-img w-20 h-20 rounded-lg object-cover border-2 border-gray-200 mx-auto" />
-    <input type="checkbox" name="Games[]" value="SW Battlefront II" class="hidden game-checkbox" data-price="49" />
-    <span class="text-sm block mt-1 text-gray-800">SW Battlefront II</span>
-</label>
-
-<label class="game-card min-w-[100px] flex-shrink-0 cursor-pointer text-center snap-center" data-multiplayer="false">
-    <img src="starwarsjedisquadrons.webp" alt="SW Jedi: Squadrons"
-         class="game-img w-20 h-20 rounded-lg object-cover border-2 border-gray-200 mx-auto" />
-    <input type="checkbox" name="Games[]" value="SW Jedi: Squadrons" class="hidden game-checkbox" data-price="49" />
-    <span class="text-sm block mt-1 text-gray-800">SW Jedi: Squadrons</span>
-</label>
-
-<label class="game-card min-w-[100px] flex-shrink-0 cursor-pointer text-center snap-center" data-multiplayer="false">
-    <img src="battlefield2042.avif" alt="Battlefield 2042"
-         class="game-img w-20 h-20 rounded-lg object-cover border-2 border-gray-200 mx-auto" />
-    <input type="checkbox" name="Games[]" value="Battlefield 2042" class="hidden game-checkbox" data-price="49" />
-    <span class="text-sm block mt-1 text-gray-800">Battlefield 2042</span>
-</label>
-
-<label class="game-card min-w-[100px] flex-shrink-0 cursor-pointer text-center snap-center" data-multiplayer="false">
-    <img src="battlefieldv.avif" alt="Battlefield V"
-         class="game-img w-20 h-20 rounded-lg object-cover border-2 border-gray-200 mx-auto" />
-    <input type="checkbox" name="Games[]" value="Battlefield V" class="hidden game-checkbox" data-price="49" />
-    <span class="text-sm block mt-1 text-gray-800">Battlefield V</span>
-</label>
-
-
-  <!-- Add more game cards as needed -->
-</div>
-</div>
-
-<script>
-  document.getElementById('filterMultiplayer').addEventListener('change', function () {
-    const showOnlyMultiplayer = this.checked;
-
-    document.querySelectorAll('.game-card').forEach(card => {
-      const isMultiplayer = card.dataset.multiplayer === 'true';
-      card.classList.toggle('hidden', showOnlyMultiplayer && !isMultiplayer);
-    });
-  });
-</script>
-
-
-
-
-<div id="controller-option" class="hidden mt-3">
-  <label for="addController" class="group flex items-center gap-4 rounded-2xl border border-gray-300 bg-white px-4 py-3 shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer">
-    
-    <img src="dualsense.png" alt="DualSense Controller" class="w-16 h-16 object-contain" />
-
-    <div class="flex flex-col flex-1">
-      <span class="text-md font-semibold text-gray-800">Add Extra Controller</span>
-      <span class="text-sm text-gray-500">Required for 2 players</span>
-      <span id="controller-price-text" class="text-base font-medium text-blue-600 mt-1">₹199</span>
-    </div>
-
-    <input
-      type="checkbox"
-      id="addController"
-      class="w-5 h-5 text-blue-600 rounded-md border-gray-300 focus:outline-none focus:ring-blue-700"
-      aria-describedby="controller-desc controller-price"
-    />
-  </label>
-</div>
-
-
-
-      <div class="w-full mt-3 mb-4">
-  <label class="block mb-2 font-semibold text-gray-700">Select Date:</label>
-  <input
-  type="text"
-  id="booking-date"
-  name="booking-date"
-  placeholder="Select date"
-  class="w-full border-[1.5px] rounded-lg px-4 py-2 text-gray-700 text-base cursor-pointer focus:outline-none focus:ring-blue-700 focus:border-blue-700"
-  readonly
-/>
-
-</div>
-
-      <div id="hourly-time-inputs" class="hidden">
-  <div class="flex flex-row flex-wrap gap-4 w-full">
-    <div class="flex-1">
-      <label class="block mb-1 font-semibold text-gray-700">Delivery Time:</label>
-      <select id="startTime" name="start-time" required class="w-full border-[1.5px] rounded-lg px-4 py-2 text-gray-700 focus:outline-none focus:ring-blue-700 focus:border-blue-700">
-        <option value="">-- Select --</option>
-      </select>
-    </div>
-    <div class="flex-1">
-      <label class="block mb-1 font-semibold text-gray-700">Return Time:</label>
-      <select id="endTime" name="end-time" required class="w-full border-[1.5px] rounded-lg px-4 py-2 text-gray-700 focus:outline-none focus:ring-blue-700 focus:border-blue-700 mb-4" disabled>
-        <option value="">-- Select --</option>
-      </select>
-    </div>
-  </div>
-</div>
-
-
-    
-
-      <div id="fixed-time-display" class="hidden mb-4">
-  <div class="flex gap-4">
-    <div class="w-full">
-      <label id="fixedStartLabel" class="block mb-1 text-sm font-medium text-gray-700">Delivery Time:</label>
-      <input
-        id="fixedStartTime"
-        type="text"
-        disabled
-        class="w-full border rounded-lg px-4 py-2 text-gray-700 opacity-70 focus:outline-none focus:ring-blue-700 focus:border-blue-700 cursor-not-allowed"
-      />
-    </div>
-    <div class="w-full">
-      <label id="fixedEndLabel" class="block mb-1 text-sm font-medium text-gray-700">Return Time:</label>
-      <input
-        id="fixedEndTime"
-        type="text"
-        disabled
-        class="w-full border rounded-lg px-4 py-2 text-gray-700 opacity-70 cursor-not-allowed"
-      />
-    </div>
-  </div>
-</div>
-
-
-
-<div class="sticky bottom-0 bg-white px-4 py-3 border-t border-gray-300 -mx-4 pb-2">
-<div class="text-right">
-        <button type="button" id="nextToStep2" class="bg-black text-white font-medium px-5 py-1 rounded-full hover:bg-gray-800 transition">Next</button>
-      </div>
-      </div>
-    </div>
-  
-  <!-- STEP 2: Delivery Details -->
-<div id="step2" class="hidden">
-  <div class="space-y-4">
-
-    <!-- Each input uses floating label, rounded corners, slim height -->
-    <!-- Adjusted font weight: grey placeholders normal, floating labels bold -->
-    <div class="flex items-center space-x-1 mb-3">
-  <img src="location.png" alt="Location" class="h-6 w-6">
-  <h2 class="text-lg font-semibold text-gray-800">Deliver To</h2>
-</div>
-    <!-- Address Input -->
-    <div class="relative">
-      <input
-        type="text"
-        name="address-line"
-        id="address-line"
-        required
-        placeholder="House name / Colony / Street"
-        class="peer w-full border-[1.5px] rounded-lg px-4 py-2 text-gray-800 placeholder-transparent focus:outline-none focus:border-blue-700"
-      />
-      <label
-        for="address-line"
-        class="absolute left-3 -top-2.5 bg-white px-1 text-xs text-blue-600 font-medium transition-all duration-200
-        peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:bg-transparent
-        peer-placeholder-shown:font-normal
-        peer-focus:-top-2.5 peer-focus:text-xs peer-focus:text-blue-600 peer-focus:bg-white peer-focus:font-medium cursor-text"
-      >
-        House name / Colony / Street *
-      </label>
-    </div>
-
-
-    <!-- Name -->
-    <div class="relative">
-      <input
-        type="text"
-        name="name"
-        id="name"
-        required
-        placeholder="Full Name"
-        class="peer w-full border-[1.5px] rounded-lg px-4 py-2 text-gray-800 placeholder-transparent focus:outline-none focus:border-blue-700"
-      />
-      <label
-        for="name"
-        class="absolute left-3 -top-2.5 bg-white px-1 text-xs text-blue-600 font-medium transition-all duration-200
-        peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:bg-transparent
-        peer-placeholder-shown:font-normal
-        peer-focus:-top-2.5 peer-focus:text-xs peer-focus:text-blue-600 peer-focus:bg-white peer-focus:font-medium cursor-text"
-      >
-        Full Name *
-      </label>
-    </div>
-
-    <!-- Phone -->
-    <div class="relative">
-      <input
-        type="tel"
-        name="phone"
-        id="phone"
-        required
-        inputmode="numeric"
-        pattern="\d{10}"
-        maxlength="10"
-        placeholder="Phone Number"
-        class="peer w-full border-[1.5px] rounded-lg px-4 py-2 text-gray-800 placeholder-transparent focus:outline-none focus:border-blue-700"
-      />
-      <label
-        for="phone"
-        class="absolute left-3 -top-2.5 bg-white px-1 text-xs text-blue-600 font-medium transition-all duration-200
-        peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:bg-transparent
-        peer-placeholder-shown:font-normal
-        peer-focus:-top-2.5 peer-focus:text-xs peer-focus:text-blue-600 peer-focus:bg-white peer-focus:font-medium cursor-text"
-      >
-        Phone Number *
-      </label>
-    </div>
+    </form>
   </div>
 
- <div class="mt-6"></div>
-  <!-- Buttons with proper spacing below inputs -->
- <div class="sticky bottom-0 bg-white px-4 py-3 border-t border-gray-300 -mx-4 pb-2"> 
-    <div class="flex justify-between">
-      <button
-        type="button"
-        onclick="goToStep(1)"
-        class="bg-gray-300 text-black px-5 py-1 rounded-full hover:bg-gray-400 transition"
-      >
-        Back
-      </button>
-      <button
-        type="button"
-        id="nextToStep3"
-        class="bg-black text-white px-5 py-1 rounded-full hover:bg-gray-800 transition"
-      >
-        Next
-      </button>
-    </div>
-  </div>
-  </div>
+  <!-- START OF UPDATED MULTISTEP BOOKING MODAL -->
+  <!-- [UNCHANGED HTML ABOVE] -->
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
+  <script>
+    let alertShown = false;
 
+    function isTodayDisabledForPlan(plan) {
+      const now = new Date();
+      const hour = now.getHours();
 
+      if (plan === "hourly" && hour >= 19) return true;
+      if (plan === "day" && hour >= 18) return true;
+      if (plan === "night" && hour >= 22) return true;
 
-
- <!-- STEP 3: Payment & Summary -->
-<div id="step3" class="hidden space-y-4">
-  
-
-  <div class="relative border pl-3 p-2 rounded-lg bg-gray-50">
-    <button type="button" onclick="goToStep(1)" class="absolute top-2 right-2 text-xs text-blue-600 border border-blue-600 rounded-xl px-2 py-0.5 hover:bg-blue-50 transition">
-      Change
-    </button>
-    <h3 class="text-md font-bold mb-1 text-gray-800">Booking Summary</h3>
-    <div id="bookingSummary" class="text-sm space-y-1 text-gray-700"></div>
-  </div>
-
-  <div>
- 
-  <div class="relative">
-  <input
-    type="text"
-    id="couponCode"
-    placeholder="Enter Coupon Code"
-    class="peer w-full border-[1.5px] rounded-lg pr-20 px-4 py-2 text-gray-800 placeholder-transparent focus:outline-none focus:border-blue-700"
-    oninput="updateSummary()"
-  />
-  <label
-    for="couponCode"
-    class="absolute left-3 -top-2.5 bg-white px-1 text-xs text-blue-600 font-medium transition-all duration-200
-    peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:bg-transparent
-    peer-placeholder-shown:font-normal
-    peer-focus:-top-2.5 peer-focus:text-xs peer-focus:text-blue-600 peer-focus:bg-white peer-focus:font-medium cursor-text"
-  >
-    Coupon Code
-  </label>
-  <div class="absolute inset-y-0 right-2 flex items-center translate-y-[-11.5px]">
-    <button
-      type="button"
-      onclick="applyCoupon()"
-      class="bg-[#FFD345] border-[1px] border-yellow-500 text-black text-sm font-medium px-2 py-0.5 pb-1 rounded-md hover:[#E0B825] box-shadow"
-    >
-      Apply
-    </button>
-  </div>
-  <p class="text-sm ml-1 mt-1 mb-2 text-gray-500">
-    Use coupon code '<span class="text-blue-600 font-semibold">LEAZO</span>' for flat <span id="couponAmountText" class="text-green-600 font-semibold">₹100</span> off
-  </p>
-</div>
-
-
-<div class="relative border pl-3 p-2 rounded-lg bg-gray-50">
-    <div id="summaryBreakdown" class="text-sm space-y-1 text-gray-700"></div>
-    
-  </div>
-
-</div>
-
-<div> 
-  <p class="font-semibold mb-2 text-gray-700">Select Payment Method:</p>
-
-  <div class="flex w-full gap-1">
-  <!-- UPI -->
-  <div
-    onclick="selectPayment('upi')"
-    class="flex-1 payment-option border px-3 py-3 rounded-xl cursor-pointer hover:bg-gray-100 transition flex flex-col items-center justify-center gap-1"
-  >
-    <img src="upi.png" alt="UPI" class="w-7 h-3.5" />
-    <span class="text-md font-medium text-center leading-tight">UPI (Extra 5% Off)</span>
-  </div>
-
-  <!-- COD -->
-  <div
-    onclick="selectPayment('cod')"
-    class="flex-1 payment-option border px-3 py-3 rounded-xl cursor-pointer hover:bg-gray-100 transition flex flex-col items-center justify-center gap-1"
-  >
-    <img src="cod.png" alt="Cash on Delivery" class="w-6 h-3" />
-    <span class="text-md font-medium text-center leading-tight">Cash on Delivery</span>
-  </div>
-</div>
-  <input type="hidden" name="payment-method" id="paymentMethod" />
-</div>
-
-
-
-<div class="sticky bottom-0 bg-white px-4 py-3 border-t border-gray-300 -mx-4 pb-2">
-  <div class="flex justify-between items-center">
-  <p class="text-xl font-bold text-gray-800 ml-4">
-    Total: ₹<span id="totalAmount">0</span>
-  </p>
-  <button type="submit" id="bookBtn" class="bg-blue-600 text-white font-medium px-5 py-2 rounded-xl hover:bg-blue-700 transition">
-    Book Now
-  </button>
-</div>
-</div>
-</div>
-</div>
-
-
-
-
-      </form>
-</div>
-
-<!-- START OF UPDATED MULTISTEP BOOKING MODAL -->
-<!-- [UNCHANGED HTML ABOVE] -->
-
-<script>
-let alertShown = false;
-
-function isTodayDisabledForPlan(plan) {
-  const now = new Date();
-  const hour = now.getHours();
-
-  if (plan === "hourly" && hour >= 19) return true;
-  if (plan === "day" && hour >= 18) return true;
-  if (plan === "night" && hour >= 22) return true;
-
-  return false;
-}
-
-function toggleDetails(button) {
-  const selectedPlan = button.closest('[data-plan]').getAttribute('data-plan');
-  const previousPlan = localStorage.getItem('selectedRentalPlan');
-  const isNewPlan = previousPlan && previousPlan !== selectedPlan;
-
-  const card = button.closest('[data-plan]');
-  document.querySelectorAll('[data-plan]').forEach(c => c.classList.remove('ring', 'ring-black', 'ring-offset-2'));
-  card.classList.add('ring', 'ring-black', 'ring-offset-2');
-
-resetBookingState();
-
-  updateSummary();
-
-  document.getElementById('bookingModal').classList.remove('hidden');
-  alertShown = false;
-
- // Always reset form, step, and selections (even if same plan)
-document.getElementById("bookingForm").reset();
-goToStep(1);
-clearRingFromGames();
-
-// ✅ Reset multiplayer toggle and show all games
-const multiplayerToggle = document.getElementById("multiplayerToggle");
-if (multiplayerToggle) multiplayerToggle.checked = false;
-
-document.querySelectorAll(".game-card").forEach(card => {
-  card.classList.remove("hidden");
-});
-
-// ✅ Restore multiplayer rings if games were checked
-setTimeout(() => {
-  document.querySelectorAll(".game-card").forEach(card => {
-    const img = card.querySelector("img");
-    const checkbox = card.querySelector("input[type='checkbox']");
-    if (checkbox.checked) {
-      img.classList.add("ring", "ring-[2.5px]", "ring-black");
+      return false;
     }
-  });
-}, 50);
+    //global declarations (made by me)
 
-  localStorage.setItem('selectedRentalPlan', selectedPlan);
-  document.getElementById('selectedPlanInput').value = selectedPlan;
-  const planNames = {
-  hourly: "Hourly Plan",
-  day: "Day Plan",
-  night: "Night Plan"
+    //start<Plans & specific city plan related>
+    //Plan display names
+    const planNames = {
+      hourly: "Hourly Plan",
+      day: "Day Plan",
+      night: "Night Plan",
+      daynight: "Day + Night Plan",
+      weekly: "Weekly Plan",
+      halfmonth: "15 Days Plan",
+      monthly: "Monthly Plan"
+    }
+
+    // Plans groups for each cities group → plans details
+    const PLANS_10KM = {
+      hourly: {
+        mrp: "₹199/hr", offer: "₹99/hr", badge: "50% OFF", couponText: "50%",
+        description: [
+          "Minimum 2 hours booking",
+          "<span class='text-green-600 font-semibold'>2 Games Free</span>"
+        ]
+      },
+      day: {
+        mrp: "₹999", offer: "₹499/day", badge: "₹500 OFF", couponText: "₹500",
+        description: [
+          "Morning 11 AM – Evening 8 PM",
+          "<span class='text-green-600 font-semibold'>2 Games Free</span>"
+        ],
+        fixedStart: "11:00 AM",
+        fixedEnd: "8:00 PM",
+        labelStart: "Delivery Time:",
+        labelEnd: "Return Time:"
+      },
+      night: {
+        mrp: "₹1499", offer: "₹699/night", badge: "₹800 OFF", couponText: "₹800",
+        description: [
+          "Night 9 PM – Morning 10 AM",
+          "<span class='text-green-600 font-semibold'>2 Games Free</span>"
+        ],
+        fixedStart: "9:00 PM",
+        fixedEnd: "10:00 AM",
+        labelStart: "Delivery Time:",
+        labelEnd: "Return Time:"
+      },
+      daynight: {
+        mrp: "₹1999", offer: "₹1099/full day", badge: "₹900 OFF", couponText: "₹900",
+        description: [
+          "Day and night full access",
+          "<span class='text-green-600 font-semibold'>Extra controller ₹199</span>"
+        ],
+        fixedStart: "12:00 PM",
+        fixedEnd: "11:00 AM (next day)",
+        labelStart: "Delivery Time:",
+        labelEnd: "Return Time:"
+      },
+      weekly: {
+        mrp: "₹3990", offer: "₹2990/week", badge: "₹1000 OFF", couponText: "₹1000",
+        description: [
+          "7 days access",
+          "<span class='text-green-600 font-semibold'>Extra controller ₹399</span>"
+        ],
+        hideFixedTime: true
+      },
+      halfmonth: {
+        mrp: "₹4990", offer: "₹3990/15 days", badge: "₹1000 OFF", couponText: "₹1000",
+        description: [
+          "15 days continuous play",
+          "<span class='text-green-600 font-semibold'>Extra controller ₹499</span>"
+        ],
+        hideFixedTime: true
+      },
+      monthly: {
+        mrp: "₹9990", offer: "₹5990/month", badge: "₹4000 OFF", couponText: "₹4000",
+        description: [
+          "Unlimited hours",
+          "<span class='text-green-600 font-semibold'>Extra controller ₹999</span>"
+        ],
+        hideFixedTime: true
+      }
+    }
+    const PLANS_100KM = {
+      day: {
+        mrp: "₹999", offer: "₹599/day", badge: "₹400 OFF", couponText: "₹400",
+        description: [
+          "Morning 11 AM – Evening 8 PM",
+          "<span class='text-green-600 font-semibold'>2 Games Free</span>"
+        ],
+        fixedStart: "11:00 AM",
+        fixedEnd: "8:00 PM",
+        labelStart: "Delivery Time:",
+        labelEnd: "Return Time:"
+      },
+      night: {
+        mrp: "₹1499", offer: "₹799/night", badge: "₹700 OFF", couponText: "₹700",
+        description: [
+          "Night 9 PM – Morning 10 AM",
+          "<span class='text-green-600 font-semibold'>2 Games Free</span>"
+        ],
+        fixedStart: "9:00 PM",
+        fixedEnd: "10:00 AM",
+        labelStart: "Delivery Time:",
+        labelEnd: "Return Time:"
+      },
+      daynight: {
+        mrp: "₹1999", offer: "₹1099/full day", badge: "₹900 OFF", couponText: "₹900",
+        description: [
+          "Day and night full access",
+          "<span class='text-green-600 font-semibold'>Extra controller ₹199</span>"
+        ],
+        fixedStart: "12:00 PM",
+        fixedEnd: "11:00 AM (next day)",
+        labelStart: "Delivery Time:",
+        labelEnd: "Return Time:"
+      },
+      weekly: {
+        mrp: "₹3990", offer: "₹2990/week", badge: "₹1000 OFF", couponText: "₹1000",
+        description: [
+          "7 days access",
+          "<span class='text-green-600 font-semibold'>Extra controller ₹399</span>"
+        ],
+        hideFixedTime: true
+      },
+      halfmonth: {
+        mrp: "₹4990", offer: "₹3990/15 days", badge: "₹1000 OFF", couponText: "₹1000",
+        description: [
+          "15 days continuous play",
+          "<span class='text-green-600 font-semibold'>Extra controller ₹499</span>"
+        ],
+        hideFixedTime: true
+      },
+      monthly: {
+        mrp: "₹9990", offer: "₹5990/month", badge: "₹4000 OFF", couponText: "₹4000",
+        description: [
+          "Unlimited hours",
+          "<span class='text-green-600 font-semibold'>Extra controller ₹999</span>"
+        ],
+        hideFixedTime: true
+      }
+    }
+    const PLANS_500KM = {
+      weekly: {
+        mrp: "₹3990", offer: "₹2990/week", badge: "₹1000 OFF", couponText: "₹1000",
+        description: [
+          "7 days access",
+          "<span class='text-green-600 font-semibold'>Extra controller ₹399</span>"
+        ],
+        hideFixedTime: true
+      },
+      halfmonth: {
+        mrp: "₹4990", offer: "₹3990/15 days", badge: "₹1000 OFF", couponText: "₹1000",
+        description: [
+          "15 days continuous play",
+          "<span class='text-green-600 font-semibold'>Extra controller ₹499</span>"
+        ],
+        hideFixedTime: true
+      },
+      monthly: {
+        mrp: "₹9990", offer: "₹5990/month", badge: "₹4000 OFF", couponText: "₹4000",
+        description: [
+          "Unlimited hours",
+          "<span class='text-green-600 font-semibold'>Extra controller ₹999</span>"
+        ],
+        hideFixedTime: true
+      }
+    }
+    // Cities group → Cities
+    const CITIES_10KM = ["Mandsaur"];
+    const CITIES_100KM = ["Neemuch","Ratlam","Pratapgarh"];
+    const CITIES_500KM = ["Indore", "Ujjain", "Udaipur", "Jaipur"];
+    // Per city plan config → cities groups * plans group
+    const CITY_PLAN_CONFIG = {
+      default: PLANS_500KM
+    };
+
+    // Assign 10km cities group → PLANS_10KM group
+    CITIES_10KM.forEach(city => {
+      CITY_PLAN_CONFIG[city] = PLANS_10KM;
+    });
+
+    // Assign 100km cities group → PLANS_100KM group
+    CITIES_100KM.forEach(city => {
+      CITY_PLAN_CONFIG[city] = PLANS_100KM;
+    });
+
+    // Assign 500km cities group → PLANS_500KM group
+    CITIES_500KM.forEach(city => {
+      CITY_PLAN_CONFIG[city] = PLANS_500KM;
+    });
+    //end<Plans & specific city plan related>
+
+    //start<Delivery charges for cities group>
+      const DELIVERY_CHARGES = {
+  "10KM": 49,
+  "100KM": 99,
+  "500KM": 149
 };
 
-const gameCheckboxes = document.querySelectorAll('.game-checkbox');
-const controllerOption = document.getElementById('controller-option');
-const controllerCheckbox = document.getElementById('addController');
+    const CITY_DISTANCE_GROUP = {};
 
-gameCheckboxes.forEach(cb => {
-  cb.addEventListener('change', () => {
-    const hasMultiplayer = Array.from(gameCheckboxes).some(input =>
-      input.checked && input.closest('label').dataset.multiplayer === 'true'
-    );
+CITIES_10KM.forEach(city => CITY_DISTANCE_GROUP[city] = "10KM");
+CITIES_100KM.forEach(city => CITY_DISTANCE_GROUP[city] = "100KM");
+CITIES_500KM.forEach(city => CITY_DISTANCE_GROUP[city] = "500KM");
 
-    controllerOption.classList.toggle('hidden', !hasMultiplayer);
+    //end<Delivery charges for cities group>
 
-    if (!hasMultiplayer) {
-      controllerCheckbox.checked = false;
-    }
 
-    updateSummary(); // Ensure pricing is updated
-  });
+      // AUTO-GENERATED CITY LIST (from your existing groups)
+const CITY_LIST = [
+  ...CITIES_10KM,
+  ...CITIES_100KM,
+  ...CITIES_500KM
+];
+const CITY_PRIORITY = {
+  "Neemuch": 6,
+    "Pratapgarh": 8,
+  "Ratlam": 7,
+  "Mandsaur": 5,
+  "Ujjain": 4,
+  "Indore": 2,
+  "Jaipur": 1,
+  "Udaipur": 3,
+};
+
+CITY_LIST.sort((a, b) => {
+  return (CITY_PRIORITY[a] || 999) - (CITY_PRIORITY[b] || 999);
 });
 
 
-document.getElementById('selectedPlanDisplay').textContent = `${planNames[selectedPlan]}`;
-
-  const hourlySection = document.getElementById("hourly-time-inputs");
-  const fixedTimeDisplay = document.getElementById("fixed-time-display");
-  const fixedStartTime = document.getElementById("fixedStartTime");
-  const fixedEndTime = document.getElementById("fixedEndTime");
-  const fixedStartLabel = document.getElementById("fixedStartLabel");
-  const fixedEndLabel = document.getElementById("fixedEndLabel");
-
-  if (selectedPlan === "hourly") {
-    hourlySection.classList.remove("hidden");
-    fixedTimeDisplay.classList.add("hidden");
-  } else {
-    hourlySection.classList.add("hidden");
-    fixedTimeDisplay.classList.remove("hidden");
-
-      // Make time fields required only for hourly
-  document.getElementById("startTime").required = (selectedPlan === "hourly");
-  document.getElementById("endTime").required = (selectedPlan === "hourly");
 
 
-    if (selectedPlan === "day") {
-      fixedStartTime.value = "11:00 AM";
-      fixedEndTime.value = "8:00 PM";
-      fixedStartLabel.textContent = "Delivery Time:";
-      fixedEndLabel.textContent = "Return Time:";
-    } else {
-      fixedStartTime.value = "9:00 PM";
-      fixedEndTime.value = "10:00 AM";
-      fixedStartLabel.textContent = "Delivery Time:";
-      fixedEndLabel.textContent = "Return Time:";
-    }
-  }
+        //start<Coupon & specific city coupon related>
+// Coupon groups → coupon details
+const COUPON_10KM = {
+  hourly: { text: "50%", discountType: "percent", value: 0.5 },
+  day: { text: "₹500", discountType: "flat", value: 500 },
+  night: { text: "₹800", discountType: "flat", value: 800 },
+  daynight: { text: "₹900", discountType: "flat", value: 900 },
+  weekly: { text: "₹1000", discountType: "flat", value: 1000 },
+  halfmonth: { text: "₹1000", discountType: "flat", value: 1000 },
+  monthly: { text: "₹4000", discountType: "flat", value: 4000 }
+};
 
-  setupFlatpickr();
-  updateDeliveryTime(); // Handle rounding for today
-}
+const COUPON_100KM = {
+  hourly: { text: "50%", discountType: "percent", value: 0.5 },
+  day: { text: "₹400", discountType: "flat", value: 400 },
+  night: { text: "₹700", discountType: "flat", value: 700 },
+  daynight: { text: "₹900", discountType: "flat", value: 900 },
+  weekly: { text: "₹1000", discountType: "flat", value: 1000 },
+  halfmonth: { text: "₹1000", discountType: "flat", value: 1000 },
+  monthly: { text: "₹4000", discountType: "flat", value: 4000 }
+};
 
-function clearRingFromGames() {
-  document.querySelectorAll(".game-card").forEach(card => {
-    const img = card.querySelector("img");
-    const checkbox = card.querySelector("input[type='checkbox']");
-    
-    img.classList.remove("ring", "ring-[2.5px]", "ring-black");
-    checkbox.checked = false; // This clears selection
-  });
-}
+const COUPON_500KM = {
+  weekly: { text: "₹1000", discountType: "flat", value: 1000 },
+  halfmonth: { text: "₹1000", discountType: "flat", value: 1000 },
+  monthly: { text: "₹4000", discountType: "flat", value: 4000 }
+};
 
-function closeBooking() {
-  document.getElementById('bookingModal').classList.add('hidden');
-  goToStep(1);
-  clearRingFromGames();
-  resetBookingState();
-  updateSummary(); 
-}
+// Per city coupon config config → cities groups * coupon groups
+const CITY_COUPON_CONFIG = {
+  default: COUPON_500KM
+};
 
-
-document.querySelectorAll('input[name="Games[]"]').forEach((checkbox) => {
-  checkbox.addEventListener('change', () => {
-    const checked = document.querySelectorAll('input[name="Games[]"]:checked');
-    const selectedPlan = document.getElementById("selectedPlanInput").value;
-
-    if ((selectedPlan === 'hourly' || selectedPlan === 'day' || selectedPlan === 'night') && checked.length > 1) {
-      if (!alertShown) {
-        showToast("Only 1 game is free\nExtra games are chargeable");
-        showToastShown = true;
-      }
-    }
-  });
+// Assign 10km cities group → COUPON_10KM group
+CITIES_10KM.forEach(city => {
+  CITY_COUPON_CONFIG[city] = COUPON_10KM;
 });
 
-setTimeout(() => {
-  document.getElementById("nextToStep2").addEventListener("click", () => {
-    const plan = localStorage.getItem("selectedRentalPlan");
-    const selectedGames = document.querySelectorAll(".game-card input[type='checkbox']:checked");
-    const selectedDate = document.getElementById("booking-date").value;
-
-    if (selectedGames.length === 0) {
-      showToast("Select a Game");
-      return;
-    }
-
-    if (!selectedDate) {
-      showToast("Select a Date");
-      return;
-    }
-
-    if (plan === "hourly") {
-      const start = document.getElementById("startTime").value;
-      const end = document.getElementById("endTime").value;
-
-      if (!start || !end) {
-        showToast("Select both start and end times");
-        return;
-      }
-
-      if (parseInt(end) - parseInt(start) < 2) {
-        showToast("Minimum 2 hours booking required");
-        return;
-      }
-    }
-
-    // ✅ Multiplayer warning before proceeding
-const controllerCheckbox = document.getElementById("addController");
-const hasMultiplayerGame = Array.from(document.querySelectorAll('.game-checkbox')).some(input =>
-  input.checked && input.closest('label')?.dataset.multiplayer === 'true'
-);
-
-if (hasMultiplayerGame && !controllerCheckbox?.checked) {
-  showToast("Add a controller for 2 Player games");
-}
-
-    goToStep(2);
-  });
-
-  document.getElementById("nextToStep3").addEventListener("click", () => {
-  const inputs = document.querySelectorAll('#step2 input[required]');
-  let allValid = true;
-
-  inputs.forEach((input) => {
-    if (!input.checkValidity()) {
-      input.reportValidity();
-      allValid = false;
-    }
-  });
-
-  if (allValid) {
-    const form = document.getElementById("bookingForm");
- 
-    setHiddenField("Submission Stage", "Step 2 Auto Submit");
-    // Remove required from hidden fields before sending
-    document.querySelectorAll("[required]").forEach(el => {
-      if (el.offsetParent === null) { // hidden element
-        el.required = false;
-      }
-    });
-
-    // Same extra fields logic as Book Now button
-    const selectedCity = localStorage.getItem("selectedCity") || "Not Selected";
-    const controllerSelected = document.getElementById("addController")?.checked ? "Yes" : "No";
-    const twoPlayerToggle = document.getElementById("filterMultiplayer")?.checked ? "On" : "Off";
-    const couponCode = document.getElementById("couponCode")?.value || "None";
-    const priceBreakdown = document.getElementById("summaryBreakdown")?.innerText || "";
-    const totalAmount = document.getElementById("totalAmount")?.innerText || "0";
-
-    function setHiddenField(name, value) {
-      let input = form.querySelector(`input[name="${name}"]`);
-      if (!input) {
-        input = document.createElement("input");
-        input.type = "hidden";
-        input.name = name;
-        form.appendChild(input);
-      }
-      input.value = value;
-    }
-
-    setHiddenField("Selected City", selectedCity);
-    setHiddenField("Extra Controller Selected", controllerSelected);
-    setHiddenField("2 Player Toggle", twoPlayerToggle);
-    setHiddenField("Coupon Code", couponCode);
-    setHiddenField("Price Breakdown", priceBreakdown);
-    setHiddenField("Total Amount", `₹${totalAmount}`);
-
-    
-    // Send silently to Formcarry
-    fetch("https://formcarry.com/s/15lg9WIB6XN", {
-      method: "POST",
-      body: new FormData(form),
-      headers: { 'Accept': 'application/json' }
-    })
-    .then(response => {
-      if (response.ok) {
-        console.log("✅ Step 2 form data submitted silently");
-      } else {
-        console.error("❌ Silent submission failed");
-      }
-    })
-    .catch(err => console.error("❌ Network error", err));
-
-    // Finally, move to Step 3
-    goToStep(3);
-  }
+// Assign 100km cities group → COUPON_100KM group
+CITIES_100KM.forEach(city => {
+  CITY_COUPON_CONFIG[city] = COUPON_100KM;
 });
 
-
-  document.querySelectorAll(".game-card").forEach(card => {
-    const img = card.querySelector("img");
-    const checkbox = card.querySelector("input[type='checkbox']");
-    card.addEventListener("click", () => {
-      checkbox.checked = !checkbox.checked;
-      img.classList.toggle("ring", checkbox.checked);
-      img.classList.toggle("ring-[2.5px]", checkbox.checked);
-      img.classList.toggle("ring-blue-700", checkbox.checked);
-    });
-  });
-
-  const startTimeSelect = document.getElementById("startTime");
-  const endTimeSelect = document.getElementById("endTime");
-  const bookingDateInput = document.getElementById("booking-date");
-
-  const generateTimeOptions = (startHour, endHour) => {
-    const options = [];
-    for (let hour = startHour; hour <= endHour; hour++) {
-      const ampm = hour >= 12 ? "PM" : "AM";
-      const displayHour = hour > 12 ? hour - 12 : hour;
-      options.push({ value: hour, label: `${displayHour}:00 ${ampm}` });
-    }
-    return options;
-  };
-
-  const updateStartTimeOptions = () => {
-    const selectedDate = flatpickr.parseDate(bookingDateInput.value, "d/m/Y");
-if (!selectedDate) return;
-    const now = new Date();
-    let minHour = 10;
-    const selectedPlan = document.getElementById("selectedPlanInput").value;
-
-    if (selectedDate.toDateString() === now.toDateString()) {
-      const currentHour = now.getHours();
-      const currentMinute = now.getMinutes();
-      minHour = currentMinute > 0 ? currentHour + 1 : currentHour;
-      if (minHour < 10) minHour = 10;
-    }
-
-    if (minHour > 19) minHour = 20;
-
-    const options = generateTimeOptions(minHour, 19);
-    startTimeSelect.innerHTML = `<option value="">-- Select --</option>`;
-    options.forEach(opt => {
-      const option = document.createElement("option");
-      option.value = opt.value;
-      option.textContent = opt.label;
-      startTimeSelect.appendChild(option);
-    });
-
-    endTimeSelect.innerHTML = `<option value="">-- Select --</option>`;
-    endTimeSelect.disabled = true;
-  };
-
-  startTimeSelect.addEventListener("change", () => {
-    const start = parseInt(startTimeSelect.value);
-    if (!start) return;
-
-    const minEnd = start + 2;
-    const options = generateTimeOptions(minEnd, 21);
-    endTimeSelect.innerHTML = `<option value="">-- Select --</option>`;
-    options.forEach(opt => {
-      const option = document.createElement("option");
-      option.value = opt.value;
-      option.textContent = opt.label;
-      endTimeSelect.appendChild(option);
-    });
-
-    endTimeSelect.disabled = false;
-  });
-
-  bookingDateInput.addEventListener("change", () => {
-    updateStartTimeOptions();
-    startTimeSelect.value = "";
-    endTimeSelect.innerHTML = `<option value="">-- Select --</option>`;
-    endTimeSelect.disabled = true;
-    updateDeliveryTime();
-  });
-
-  setupFlatpickr();
-  updateStartTimeOptions();
-
-}, 0);
-
-// ✅ Multiplayer toggle functionality
-// ✅ Multiplayer toggle with toast on missing controller
-document.getElementById("multiplayerToggle")?.addEventListener("change", function () {
-  const showOnlyMultiplayer = this.checked;
-
-  // Show/hide games based on multiplayer status
-  document.querySelectorAll(".game-card").forEach(card => {
-    const label = card.querySelector("label");
-    const isMultiplayer = label?.dataset.multiplayer === "true";
-    card.classList.toggle("hidden", showOnlyMultiplayer && !isMultiplayer);
-  });
-
-  // ⏱ Wait for the DOM to settle, then check if multiplayer games are selected
-  setTimeout(() => {
-    const controllerOption = document.getElementById("controller-option");
-    const controllerCheckbox = document.getElementById("addController");
-
-    const hasMultiplayer = Array.from(document.querySelectorAll('.game-checkbox')).some(input =>
-      input.checked && input.closest('label')?.dataset.multiplayer === 'true'
-    );
-
-    if (hasMultiplayer) {
-      controllerOption?.classList.remove("hidden");
-
-      if (!controllerCheckbox?.checked) {
-        showToast("Add a controller for 2 Player");
-      }
-    } else {
-      controllerOption?.classList.add("hidden");
-      if (controllerCheckbox) controllerCheckbox.checked = false;
-    }
-  }, 100); // Short delay ensures updated DOM state
+// Assign 500km cities group → COUPON_500KM group
+CITIES_500KM.forEach(city => {
+  CITY_COUPON_CONFIG[city] = COUPON_500KM;
 });
-
-// 🆕 Setup dynamic flatpickr minDate
-function setupFlatpickr() {
-  const now = new Date();
-  const selectedPlan = localStorage.getItem("selectedRentalPlan") || "hourly";
-  const selectedCity = localStorage.getItem("selectedCity");
   
-  const isCityRestricted = ["Pratapgarh", "Neemuch"].includes(selectedCity);
-  const disableToday = isTodayDisabledForPlan(selectedPlan) || isCityRestricted;
 
-  flatpickr("#booking-date", {
-    dateFormat: "d/m/Y",
-    disableMobile: true,
-    minDate: disableToday ? new Date(now.setDate(now.getDate() + 1)) : "today"
+    // Free games limit per plan
+    const FREE_GAME_LIMITS = {
+      hourly: 2,
+      day: 2,
+      night: 2,
+      daynight: 3,
+      weekly: 3,
+      halfmonth: 6,
+      monthly: 4
+    };
+
+function renderCities() {
+  const iconContainer = document.getElementById("cityIcons");
+  const pillContainer = document.getElementById("cityPills");
+
+  if (!iconContainer || !pillContainer) return;
+
+  iconContainer.innerHTML = "";
+  pillContainer.innerHTML = "";
+
+  // First 6 cities → icons with images
+  const topSix = CITY_LIST.slice(0, 6);
+  const remaining = CITY_LIST.slice(6);
+
+  // Icon grid (with images)
+  topSix.forEach(city => {
+    const img = city.toLowerCase() + ".webp";
+
+    iconContainer.insertAdjacentHTML(
+      "beforeend",
+      `
+      <button type="button" 
+              class="city-btn flex flex-col items-center gap-1" 
+              data-city="${city}">
+        <img src="${img}" class="w-13 h-13 rounded-full object-cover" alt="${city}">
+        <span class="text-sm font-medium">${city}</span>
+      </button>
+      `
+    );
+  });
+
+  // Pill-style list for remaining cities
+  remaining.forEach(city => {
+    pillContainer.insertAdjacentHTML(
+      "beforeend",
+      `
+      <button type="button"
+              class="city-btn text-xs px-3 py-1 rounded-full border border-gray-300 bg-gray-50 hover:bg-gray-100 hover:border-gray-400 transition text-gray-700"
+              data-city="${city}">
+        ${city}
+      </button>
+      `
+    );
+  });
+
+  // Attach click handlers to ALL city buttons
+  document.querySelectorAll(".city-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const city = btn.dataset.city;
+      localStorage.setItem("selectedCity", city);
+      document.getElementById("cityModal").classList.add("hidden");
+      renderPlans(city); // refresh plans for that city
+    });
   });
 }
 
-// 🆕 Round delivery time up if today selected for day/night
-function updateDeliveryTime() { 
-  const selectedPlan = document.getElementById("selectedPlanInput").value;
-  const selectedDateStr = document.getElementById("booking-date").value;
-  const fixedStartTime = document.getElementById("fixedStartTime");
+// Call once on load
+document.addEventListener("DOMContentLoaded", renderCities);
 
-  if (!selectedDateStr || (selectedPlan !== "day" && selectedPlan !== "night")) return;
 
-  const now = new Date();
-  const selectedDate = flatpickr.parseDate(selectedDateStr, "d/m/Y");
-  const isToday = selectedDate.toDateString() === now.toDateString();
 
-  // Helper to format hour
-  const formatHour = (hour) => {
-    const ampm = hour >= 12 ? "PM" : "AM";
-    const displayHour = hour > 12 ? hour - 12 : hour === 0 ? 12 : hour;
-    return `${displayHour}:00 ${ampm}`;
-  };
+    // Plan generator (main)    
+    function renderPlans(city = "default") {
+      const container = document.getElementById("plansContainer");
+      if (!container) return; // prevent null error
+      container.innerHTML = "";
 
-  if (selectedPlan === "day") {
-    if (isToday) {
-      const currentHour = now.getHours();
-      const currentMinute = now.getMinutes();
+      // Use the city-specific plan data if available
+      const cityData = CITY_PLAN_CONFIG[city] || CITY_PLAN_CONFIG.default;
 
-      if (currentHour >= 11) {
-        // After 11 AM, round up to next hour
-        let hour = currentHour;
-        if (currentMinute > 0) hour += 1;
-        fixedStartTime.value = formatHour(hour);
-      } else {
-        // Before 11 AM, keep default
-        fixedStartTime.value = "11:00 AM";
-      }
-    } else {
-      fixedStartTime.value = "11:00 AM";
+      // Loop through all plan keys (hourly, day, night, etc.)
+      Object.keys(cityData).forEach(planKey => {
+        const plan = cityData[planKey];
+
+        const planHTML = `
+      <div data-plan="${planKey}"
+        class="relative border rounded-xl p-6 w-full max-w-xs flex flex-col justify-between items-center text-center transition duration-200 ease-in-out transform hover:scale-105 shadow-sm border-b-4 border-black">
+
+        <div class="absolute top-2 right-2 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded">${plan.badge}</div>
+
+        <h4 class="text-3xl font-semibold">${planKey === "hourly" ? "🕒" :
+            planKey === "day" ? "☀️" :
+              planKey === "night" ? "🌙" :
+                planKey === "daynight" ? "🌞🌙" :
+                  planKey === "weekly" ? "📅" :
+                    planKey === "halfmonth" ? "🗓️" :
+                      planKey === "monthly" ? "📆" : "🎮"
+          }<br>${planNames[planKey]}
+
+        <p class="text-xl font-semibold text-gray-500 line-through">${plan.mrp}</p>
+        <p class="text-2xl font-semibold mt-1">${plan.offer}</p>
+
+        <button onclick="toggleDetails(this)" data-plan="${planKey}"
+          class="plan-btn mt-4 mb-3 inline-block bg-black text-white px-5 py-2 rounded-full text-sm md:text-base transition duration-200 ease-in-out transform hover:scale-105 hover:bg-gray-800 font-semibold">
+          Select
+        </button>
+
+        <ul class="list-disc pl-5 text-left text-black font-semibold leading-relaxed text-base">
+          ${plan.description.map(d => `<li>${d}</li>`).join("")}
+        </ul>
+
+        <div class="w-full flex overflow-hidden shadow-md border rounded-lg mt-4 border border-[#393be5]">
+          <div class="bg-yellow-400 text-black flex flex-col justify-center items-center px-3 py-2 w-1/3 relative">
+            <div class="flex items-center gap-2">
+              <p class="text-sm font-medium">Offer</p>
+            </div>
+            <p class="text-2xl md:text-3xl font-bold">${plan.offer.split("/")[0]}</p>
+          </div>
+          <div class="bg-black text-white flex items-center justify-between px-4 py-3 w-2/3 relative">
+            <p class="text-sm md:text-base leading-tight">
+              Use code <span class="font-bold">LEAZO</span><br>
+              and get extra ${plan.couponText} off
+            </p>
+          </div>
+        </div>
+      </div>
+    `;
+
+        container.insertAdjacentHTML("beforeend", planHTML);
+      });
+
+      // 🔥 Once cards are created, update them dynamically by city config
+      updatePlanCardPricingByCity(city);
     }
-  }
 
-  if (selectedPlan === "night") {
-    if (isToday) {
-      const currentHour = now.getHours();
-      const currentMinute = now.getMinutes();
 
-      if (currentHour >= 21) {
-        // After 9 PM → round up to next hour
-        let hour = currentHour;
-        if (currentMinute > 0) hour += 1;
-        fixedStartTime.value = formatHour(hour);
-      } else {
-        // Before 9 PM → show default
-        fixedStartTime.value = "9:00 PM";
+    function toggleDetails(button) {
+      const selectedPlan = button.closest('[data-plan]').getAttribute('data-plan'); renderGamesForPlan(selectedPlan); clearRingFromGames();
+
+      const previousPlan = localStorage.getItem('selectedRentalPlan');
+      const isNewPlan = previousPlan && previousPlan !== selectedPlan;
+
+      const card = button.closest('[data-plan]');
+      document.querySelectorAll('[data-plan]').forEach(c => c.classList.remove('ring', 'ring-black', 'ring-offset-2'));
+      card.classList.add('ring', 'ring-black', 'ring-offset-2');
+
+      resetBookingState();
+
+      updateSummary();
+
+      document.getElementById('bookingModal').classList.remove('hidden');
+      alertShown = false;
+
+      // Always reset form, step, and selections (even if same plan)
+      document.getElementById("bookingForm").reset();
+      goToStep(1);
+      clearRingFromGames();
+
+      // ✅ Reset multiplayer toggle and show all games
+      const multiplayerToggle = document.getElementById("multiplayerToggle");
+      if (multiplayerToggle) multiplayerToggle.checked = false;
+
+      document.querySelectorAll(".game-card").forEach(card => {
+        card.classList.remove("hidden");
+      });
+
+      // ✅ Restore multiplayer rings if games were checked
+      setTimeout(() => {
+        document.querySelectorAll(".game-card").forEach(card => {
+          const img = card.querySelector("img");
+          const checkbox = card.querySelector("input[type='checkbox']");
+          if (checkbox.checked) {
+            img.classList.add("ring", "ring-[2.5px]", "ring-black");
+          }
+        });
+      }, 50);
+
+      localStorage.setItem('selectedRentalPlan', selectedPlan);
+      document.getElementById('selectedPlanInput').value = selectedPlan;
+      ;
+
+
+      const gameCheckboxes = document.querySelectorAll('.game-checkbox');
+      const controllerOption = document.getElementById('controller-option');
+      const controllerCheckbox = document.getElementById('addController');
+
+      gameCheckboxes.forEach(cb => {
+        cb.addEventListener('change', () => {
+          const hasMultiplayer = Array.from(gameCheckboxes).some(input =>
+            input.checked && input.closest('label').dataset.multiplayer === 'true'
+          );
+
+          controllerOption.classList.toggle('hidden', !hasMultiplayer);
+
+          if (!hasMultiplayer) {
+            controllerCheckbox.checked = false;
+          }
+
+          updateSummary(); // Ensure pricing is updated
+        });
+      });
+
+
+      document.getElementById('selectedPlanDisplay').textContent = planNames[selectedPlan];
+
+      const city = localStorage.getItem("selectedCity") || "default";
+      const planConfig = CITY_PLAN_CONFIG[city][selectedPlan];
+
+      // Auto-apply LEAZO coupon
+      document.getElementById("couponCode").value = "LEAZO";
+      appliedCoupon = "leazo";
+      updateSummary();
+
+      // DOM references
+      const hourlySection = document.getElementById("hourly-time-inputs");
+      const fixedTimeDisplay = document.getElementById("fixed-time-display");
+      const fixedStartTime = document.getElementById("fixedStartTime");
+      const fixedEndTime = document.getElementById("fixedEndTime");
+      const fixedStartLabel = document.getElementById("fixedStartLabel");
+      const fixedEndLabel = document.getElementById("fixedEndLabel");
+
+      // Requirements only for hourly
+      document.getElementById("startTime").required = (selectedPlan === "hourly");
+      document.getElementById("endTime").required = (selectedPlan === "hourly");
+
+      // 1️⃣ If this plan hides fixed time → hide everything
+      if (planConfig.hideFixedTime) {
+        hourlySection.classList.add("hidden");
+        fixedTimeDisplay.classList.add("hidden");
+        return;
       }
-    } else {
-      // Future date → default
-      fixedStartTime.value = "9:00 PM";
+
+      // 2️⃣ If hourly → show hourly inputs
+      if (selectedPlan === "hourly") {
+        hourlySection.classList.remove("hidden");
+        fixedTimeDisplay.classList.add("hidden");
+        return;
+      }
+
+      // 3️⃣ Otherwise show fixed timing using planConfig
+      hourlySection.classList.add("hidden");
+      fixedTimeDisplay.classList.remove("hidden");
+
+      fixedStartLabel.textContent = planConfig.labelStart || "Delivery Time:";
+      fixedEndLabel.textContent = planConfig.labelEnd || "Return Time:";
+
+      fixedStartTime.value = planConfig.fixedStart || "";
+      fixedEndTime.value = planConfig.fixedEnd || "";
+
+
+      setupFlatpickr();
+      updateDeliveryTime(); // Handle rounding for today
+
+
     }
-  }
-}
+
+    function clearRingFromGames() {
+      document.querySelectorAll(".game-card").forEach(card => {
+        const img = card.querySelector("img");
+        const checkbox = card.querySelector("input[type='checkbox']");
+
+        img.classList.remove("ring", "ring-[2.5px]", "ring-black");
+        checkbox.checked = false; // This clears selection
+      });
+    }
+
+    function closeBooking() {
+      document.getElementById('bookingModal').classList.add('hidden');
+      goToStep(1);
+      clearRingFromGames();
+      resetBookingState();
+      updateSummary();
+    }
 
 
 
 
-// 📋 Summary step and navigation
-function goToStep(step) {
+    setTimeout(() => {
+      document.getElementById("nextToStep2").addEventListener("click", () => {
+        const plan = localStorage.getItem("selectedRentalPlan");
+        const selectedGames = document.querySelectorAll(".game-card input[type='checkbox']:checked");
+        const selectedDate = document.getElementById("booking-date").value;
+
+        if (selectedGames.length === 0) {
+          showToast("Select a Game");
+          return;
+        }
+
+        if (!selectedDate) {
+          showToast("Select a Date");
+          return;
+        }
+
+        if (plan === "hourly") {
+          const start = document.getElementById("startTime").value;
+          const end = document.getElementById("endTime").value;
+
+          if (!start || !end) {
+            showToast("Select both start and end times");
+            return;
+          }
+
+          if (parseInt(end) - parseInt(start) < 2) {
+            showToast("Minimum 2 hours booking required");
+            return;
+          }
+        }
+
+        // ✅ Multiplayer warning before proceeding
+        const controllerCheckbox = document.getElementById("addController");
+        const hasMultiplayerGame = Array.from(document.querySelectorAll('.game-checkbox')).some(input =>
+          input.checked && input.closest('label')?.dataset.multiplayer === 'true'
+        );
+
+        if (hasMultiplayerGame && !controllerCheckbox?.checked) {
+          showToast("Add a controller for 2 Player games");
+        }
+
+        goToStep(2);
+        // 👇 Auto-focus first input in Step 2 (Address)
+        setTimeout(() => {
+          const firstInput = document.querySelector('#step2 input');
+          if (firstInput) firstInput.focus();
+        }, 300); // small delay ensures step is visible
+      });
+
+      document.getElementById("nextToStep3").addEventListener("click", () => {
+        const inputs = document.querySelectorAll('#step2 input[required]');
+        let allValid = true;
+
+        inputs.forEach((input) => {
+          if (!input.checkValidity()) {
+            input.reportValidity();
+            allValid = false;
+          }
+        });
+
+        if (allValid) {
+          const form = document.getElementById("bookingForm");
+
+          setHiddenField("Submission Stage", "Step 2 Auto Submit");
+          // Remove required from hidden fields before sending
+          document.querySelectorAll("[required]").forEach(el => {
+            if (el.offsetParent === null) { // hidden element
+              el.required = false;
+            }
+          });
+
+          // Same extra fields logic as Book Now button
+          const selectedCity = localStorage.getItem("selectedCity") || "Not Selected";
+          const controllerSelected = document.getElementById("addController")?.checked ? "Yes" : "No";
+          const twoPlayerToggle = document.getElementById("filterMultiplayer")?.checked ? "On" : "Off";
+          const couponCode = document.getElementById("couponCode")?.value || "None";
+          const priceBreakdown = document.getElementById("summaryBreakdown")?.innerText || "";
+          const totalAmount = document.getElementById("totalAmount")?.innerText || "0";
+
+          function setHiddenField(name, value) {
+            let input = form.querySelector(`input[name="${name}"]`);
+            if (!input) {
+              input = document.createElement("input");
+              input.type = "hidden";
+              input.name = name;
+              form.appendChild(input);
+            }
+            input.value = value;
+          }
+
+          setHiddenField("Selected City", selectedCity);
+          setHiddenField("Extra Controller Selected", controllerSelected);
+          setHiddenField("2 Player Toggle", twoPlayerToggle);
+          setHiddenField("Coupon Code", couponCode);
+          setHiddenField("Price Breakdown", priceBreakdown);
+          setHiddenField("Total Amount", `₹${totalAmount}`);
+
+
+          // Send silently to Formcarry
+          fetch("https://formcarry.com/s/mNJ2DZIHpc", {
+            method: "POST",
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+          })
+            .then(response => {
+              if (response.ok) {
+                console.log("✅ Step 2 form data submitted silently");
+              } else {
+                console.error("❌ Silent submission failed");
+              }
+            })
+            .catch(err => console.error("❌ Network error", err));
+
+          // Finally, move to Step 3
+          goToStep(3);
+        }
+      });
+
+
+      /*document.querySelectorAll(".game-card").forEach(card => {
+        const img = card.querySelector("img");
+        const checkbox = card.querySelector("input[type='checkbox']");
+        card.addEventListener("click", () => {
+          checkbox.checked = !checkbox.checked;
+          img.classList.toggle("ring", checkbox.checked);
+          img.classList.toggle("ring-[2.5px]", checkbox.checked);
+          img.classList.toggle("ring-blue-700", checkbox.checked);
+        });
+      });*/
+
+      const startTimeSelect = document.getElementById("startTime");
+      const endTimeSelect = document.getElementById("endTime");
+      const bookingDateInput = document.getElementById("booking-date");
+
+      const generateTimeOptions = (startHour, endHour) => {
+        const options = [];
+        for (let hour = startHour; hour <= endHour; hour++) {
+          const ampm = hour >= 12 ? "PM" : "AM";
+          const displayHour = hour > 12 ? hour - 12 : hour;
+          options.push({ value: hour, label: `${displayHour}:00 ${ampm}` });
+        }
+        return options;
+      };
+
+      const updateStartTimeOptions = () => {
+        const selectedDate = flatpickr.parseDate(bookingDateInput.value, "d/m/Y");
+        if (!selectedDate) return;
+        const now = new Date();
+        let minHour = 10;
+        const selectedPlan = document.getElementById("selectedPlanInput").value;
+
+        if (selectedDate.toDateString() === now.toDateString()) {
+          const currentHour = now.getHours();
+          const currentMinute = now.getMinutes();
+          minHour = currentMinute > 0 ? currentHour + 1 : currentHour;
+          if (minHour < 10) minHour = 10;
+        }
+
+        if (minHour > 19) minHour = 20;
+
+        const options = generateTimeOptions(minHour, 19);
+        startTimeSelect.innerHTML = `<option value="">-- Select --</option>`;
+        options.forEach(opt => {
+          const option = document.createElement("option");
+          option.value = opt.value;
+          option.textContent = opt.label;
+          startTimeSelect.appendChild(option);
+        });
+
+        endTimeSelect.innerHTML = `<option value="">-- Select --</option>`;
+        endTimeSelect.disabled = true;
+      };
+
+      startTimeSelect.addEventListener("change", () => {
+        const start = parseInt(startTimeSelect.value);
+        if (!start) return;
+
+        const minEnd = start + 2;
+        const options = generateTimeOptions(minEnd, 21);
+        endTimeSelect.innerHTML = `<option value="">-- Select --</option>`;
+        options.forEach(opt => {
+          const option = document.createElement("option");
+          option.value = opt.value;
+          option.textContent = opt.label;
+          endTimeSelect.appendChild(option);
+        });
+
+        endTimeSelect.disabled = false;
+      });
+
+      bookingDateInput.addEventListener("change", () => {
+        updateStartTimeOptions();
+        startTimeSelect.value = "";
+        endTimeSelect.innerHTML = `<option value="">-- Select --</option>`;
+        endTimeSelect.disabled = true;
+        updateDeliveryTime();
+      });
+
+      setupFlatpickr();
+      updateStartTimeOptions();
+
+    }, 0);
+
+    // ✅ Multiplayer toggle functionality
+    // ✅ Multiplayer toggle with toast on missing controller
+    document.getElementById("multiplayerToggle")?.addEventListener("change", function () {
+      const showOnlyMultiplayer = this.checked;
+
+      // Show/hide games based on multiplayer status
+      document.querySelectorAll(".game-card").forEach(card => {
+        const label = card.querySelector("label");
+        const isMultiplayer = label?.dataset.multiplayer === "true";
+        card.classList.toggle("hidden", showOnlyMultiplayer && !isMultiplayer);
+      });
+
+      // ⏱ Wait for the DOM to settle, then check if multiplayer games are selected
+      setTimeout(() => {
+        const controllerOption = document.getElementById("controller-option");
+        const controllerCheckbox = document.getElementById("addController");
+
+        const hasMultiplayer = Array.from(document.querySelectorAll('.game-checkbox')).some(input =>
+          input.checked && input.closest('label')?.dataset.multiplayer === 'true'
+        );
+
+        if (hasMultiplayer) {
+          controllerOption?.classList.remove("hidden");
+
+          if (!controllerCheckbox?.checked) {
+            showToast("Add a controller for 2 Player");
+          }
+        } else {
+          controllerOption?.classList.add("hidden");
+          if (controllerCheckbox) controllerCheckbox.checked = false;
+        }
+      }, 100); // Short delay ensures updated DOM state
+    });
+
+    // 🆕 Setup dynamic flatpickr minDate
+    function setupFlatpickr() {
+      const now = new Date();
+      const selectedPlan = localStorage.getItem("selectedRentalPlan") || "hourly";
+      const selectedCity = localStorage.getItem("selectedCity");
+
+      const isCityRestricted = ["Pratapgarh", "Neemuch"].includes(selectedCity);
+      const disableToday = isTodayDisabledForPlan(selectedPlan) || isCityRestricted;
+
+      flatpickr("#booking-date", {
+        dateFormat: "d/m/Y",
+        disableMobile: true,
+        minDate: disableToday ? new Date(now.setDate(now.getDate() + 1)) : "today"
+      });
+    }
+
+    // 🆕 Round delivery time up if today selected for day/night
+    function updateDeliveryTime() {
+      const selectedPlan = document.getElementById("selectedPlanInput").value;
+      const selectedDateStr = document.getElementById("booking-date").value;
+      const fixedStartTime = document.getElementById("fixedStartTime");
+
+      if (!selectedDateStr || (selectedPlan !== "day" && selectedPlan !== "night")) return;
+
+      const now = new Date();
+      const selectedDate = flatpickr.parseDate(selectedDateStr, "d/m/Y");
+      const isToday = selectedDate.toDateString() === now.toDateString();
+
+      // Helper to format hour
+      const formatHour = (hour) => {
+        const ampm = hour >= 12 ? "PM" : "AM";
+        const displayHour = hour > 12 ? hour - 12 : hour === 0 ? 12 : hour;
+        return `${displayHour}:00 ${ampm}`;
+      };
+
+      if (selectedPlan === "day") {
+        if (isToday) {
+          const currentHour = now.getHours();
+          const currentMinute = now.getMinutes();
+
+          if (currentHour >= 11) {
+            // After 11 AM, round up to next hour
+            let hour = currentHour;
+            if (currentMinute > 0) hour += 1;
+            fixedStartTime.value = formatHour(hour);
+          } else {
+            // Before 11 AM, keep default
+            fixedStartTime.value = "11:00 AM";
+          }
+        } else {
+          fixedStartTime.value = "11:00 AM";
+        }
+      }
+
+      if (selectedPlan === "night") {
+        if (isToday) {
+          const currentHour = now.getHours();
+          const currentMinute = now.getMinutes();
+
+          if (currentHour >= 21) {
+            // After 9 PM → round up to next hour
+            let hour = currentHour;
+            if (currentMinute > 0) hour += 1;
+            fixedStartTime.value = formatHour(hour);
+          } else {
+            // Before 9 PM → show default
+            fixedStartTime.value = "9:00 PM";
+          }
+        } else {
+          // Future date → default
+          fixedStartTime.value = "9:00 PM";
+        }
+      }
+    }
+
+
+
+
+    // 📋 Summary step and navigation
+    function goToStep(step) {
+  // Hide all steps
   for (let i = 1; i <= 3; i++) {
     document.getElementById(`step${i}`).classList.add("hidden");
   }
+  // Show requested step
   document.getElementById(`step${step}`).classList.remove("hidden");
-  
- 
 
+  if (step === 3) {
+    updateSummary();
 
-  if (step === 3) updateSummary();
-}
+    // Only show popup if LEAZO is applied
+    if (appliedCoupon === "leazo") {
+      const plan = localStorage.getItem("selectedRentalPlan") || "hourly";
+      const selectedCity = localStorage.getItem("selectedCity") || "default";
 
-function goBackStep() {
-  const current = [1, 2, 3].find(i => !document.getElementById(`step${i}`).classList.contains("hidden"));
-  if (current > 1) {
-    goToStep(current - 1);
+      // 🔹 Get coupon config for this city & plan
+      const cityCoupons = CITY_COUPON_CONFIG[selectedCity] || CITY_COUPON_CONFIG.default;
+      const planConfig = cityCoupons[plan];
+
+      let discount = 0;
+
+      if (planConfig) {
+        if (planConfig.discountType === "percent") {
+          // ⏱ Hourly-like percent discount → need hours * hourly price
+          const start = parseInt(document.getElementById("startTime")?.value || 0, 10);
+          const end   = parseInt(document.getElementById("endTime")?.value || 0, 10);
+          const hours = end - start > 0 ? end - start : 2;
+
+          // ⭐ Get hourly base price from CITY_PLAN_CONFIG instead of hardcoded 199
+          let hourlyBasePrice = 199; // fallback
+
+          const cityPlans = CITY_PLAN_CONFIG[selectedCity] || CITY_PLAN_CONFIG.default || {};
+          const hourlyPlan = cityPlans["hourly"];
+
+          if (hourlyPlan && typeof hourlyPlan.mrp === "string") {
+            // e.g. "₹199/hr" → 199
+            const match = hourlyPlan.mrp.match(/(\d+)/);
+            if (match) {
+              hourlyBasePrice = parseInt(match[1], 10);
+            }
+          }
+
+          const planPrice = hours * hourlyBasePrice;
+          discount = Math.ceil(planPrice * planConfig.value);
+
+        } else if (planConfig.discountType === "flat") {
+          // 💸 Flat discount (day, night, weekly, etc.)
+          discount = planConfig.value;
+        }
+      }
+
+      // 🎉 Show popup with calculated discount
+      showDiscountPopup(discount);
+    }
   }
 }
 
-function selectPayment(method) {
-  document.getElementById("paymentMethod").value = method;
-  document.querySelectorAll(".payment-option").forEach(el =>
-    el.classList.remove("ring", "ring-blue-500", "ring-2")
-  );
-  document.querySelector(`.payment-option[onclick*='${method}']`)
-    .classList.add("ring", "ring-blue-500", "ring-2");
-
-  updateSummary(); // <-- important to refresh pricing
-}
 
 
 
+    function goBackStep() {
+      const current = [1, 2, 3].find(i => !document.getElementById(`step${i}`).classList.contains("hidden"));
+      if (current > 1) {
+        goToStep(current - 1);
+      }
+    }
 
-let appliedCoupon = null;
+    function selectPayment(method) {
+      document.getElementById("paymentMethod").value = method;
+      document.querySelectorAll(".payment-option").forEach(el =>
+        el.classList.remove("ring", "ring-blue-500", "ring-2")
+      );
+      document.querySelector(`.payment-option[onclick*='${method}']`)
+        .classList.add("ring", "ring-blue-500", "ring-2");
+
+      updateSummary(); // <-- important to refresh pricing
+    }
+
+
+    let appliedCoupon = null;
 
 function applyCoupon() {
   const input = document.getElementById("couponCode").value.trim().toLowerCase();
-  if (input === "leazo") {
-    appliedCoupon = "leazo";
-    showToast("Coupon applied!");
-  } else {
+  const plan = localStorage.getItem("selectedRentalPlan") || "hourly";
+  const selectedCity = localStorage.getItem("selectedCity") || "default";
+
+  // 🔥 Use CITY_COUPON_CONFIG instead of COUPON_CONFIG
+  const cityCoupons = CITY_COUPON_CONFIG[selectedCity] || CITY_COUPON_CONFIG.default;
+  const coupon = cityCoupons[plan];
+
+  if (input !== "leazo") {
     appliedCoupon = null;
     showToast("Invalid code\nUse coupon code 'LEAZO' for discount");
+    updateSummary();
+    return;
   }
+
+  appliedCoupon = "leazo";
+  let discount = 0;
+
+  if (coupon) {
+    // ===========================
+    //  PERCENT DISCOUNT (Hourly)
+    // ===========================
+    if (coupon.discountType === "percent") {
+      const start = parseInt(document.getElementById("startTime")?.value || 0, 10);
+      const end = parseInt(document.getElementById("endTime")?.value || 0, 10);
+      const hours = end - start > 0 ? end - start : 2;
+
+      // ⭐ Get hourly price from CITY_PLAN_CONFIG
+      let hourlyBasePrice = 199; // fallback
+
+      const cityPlans = CITY_PLAN_CONFIG[selectedCity] || CITY_PLAN_CONFIG.default;
+      const hourlyPlan = cityPlans["hourly"];
+
+      if (hourlyPlan?.mrp) {
+        const match = hourlyPlan.mrp.match(/(\d+)/); // extract digits
+        if (match) hourlyBasePrice = parseInt(match[1], 10);
+      }
+
+      const planPrice = hours * hourlyBasePrice;
+      discount = Math.ceil(planPrice * coupon.value);
+
+    } else {
+      // ===========================
+      //  FLAT DISCOUNT (day, night, weekly...)
+      // ===========================
+      discount = coupon.value;
+    }
+  }
+
+  // 🎉 Show discount popup
+  showDiscountPopup(discount);
+
   updateSummary();
 }
 
-const cityDeliveryPrices = {
-  "Neemuch": 99,
-  "Pratapgarh": 99,
-  "Mandsaur": 99
-};
 
-function updateSummary() {
-  const plan = localStorage.getItem("selectedRentalPlan") || "hourly";
-  const bookingDate = document.getElementById("booking-date")?.value || "";
-  const startTime = document.getElementById("startTime")?.selectedOptions?.[0]?.textContent || "";
-  const endTime = document.getElementById("endTime")?.selectedOptions?.[0]?.textContent || "";
-  const fixedStartTime = document.getElementById("fixedStartTime")?.value || "";
-  const fixedEndTime = document.getElementById("fixedEndTime")?.value || "";
 
-  const startInput = document.getElementById("startTime");
-  const endInput = document.getElementById("endTime");
 
-  let planPrice = 0;
-  let hours = 0;
+    let appliedReferral = null;
+    let referralCodesCache = {};
 
-  const selectedGames = document.querySelectorAll('input[name="Games[]"]:checked');
-  const gameNames = Array.from(selectedGames).map(input => input.value);
-  const paymentMethod = document.getElementById("paymentMethod")?.value || "cod";
-
-  // Safely calculate hours
-  if (plan === "hourly" && startInput && endInput) {
-    const start = parseInt(startInput.value);
-    const end = parseInt(endInput.value);
-    hours = end - start;
-    if (!isNaN(hours) && hours > 0) {
-      planPrice = hours * 198;
-    } else {
-      planPrice = 0;
+    async function loadReferralCodes() {
+      try {
+        const webappURL = "https://script.google.com/macros/s/AKfycbx-J5qod-YnxNoy3mBQ-_BKQKvtQ7UnnG4sqSkIN1r165P3dB1wKd9zblBqRmNdvDkXKw/exec"; // <-- replace with your Apps Script URL
+        const res = await fetch(webappURL + "?all=1");
+        const data = await res.json();
+        if (data.ok && data.codes) {
+          referralCodesCache = data.codes;
+          console.log("Referral codes loaded:", referralCodesCache);
+        }
+      } catch (err) {
+        console.error("Failed to load referral codes", err);
+      }
     }
-  } else if (plan === "day") {
-    planPrice = 999;
-  } else if (plan === "night") {
-    planPrice = 1499;
-  }
+
+    // Load codes when page is ready
+    document.addEventListener("DOMContentLoaded", loadReferralCodes);
+
+    function applyReferral() {
+      const input = document.getElementById("referralCodeInput").value.trim().toLowerCase();
+      const selectedPlan = localStorage.getItem("selectedRentalPlan") || "hourly";
+
+      if (!input) {
+        showToast("Enter a gift card code");
+        return;
+      }
+
+      if (selectedPlan === "hourly") {
+        appliedReferral = null;
+        referralDiscount = 0;
+        showToast("Gift card discount apply only on day and night plan");
+        updateSummary();
+        return;
+      }
+
+      if (referralCodesCache[input]) {
+        appliedReferral = input;
+        referralDiscount = referralCodesCache[input];
+        showDiscountPopup(referralDiscount); // <-- new popup with confetti
+      } else {
+        appliedReferral = null;
+        referralDiscount = 0;
+        showToast("Invalid gift card code");
+      }
 
 
- // 🎮 Game pricing with most expensive one free
-let gameTotal = 0;
-let gameBreakdown = [];
-
-let selectedGameData = Array.from(selectedGames).map(input => ({
-  name: input.value,
-  price: parseFloat(input.dataset.price) || 0
-}));
+      updateSummary();
+    }
 
 
 
-// Controller pricing – dynamic based on plan
-const addController = document.getElementById("addController")?.checked;
-let controllerCharge = 0;
-if (addController) {
-  if (plan === "hourly") controllerCharge = 39 * (hours || 2); // assume 2 hrs min if missing
-  else if (plan === "day") controllerCharge = 199;
-  else if (plan === "night") controllerCharge = 299;
-}
-
-// Update controller price text dynamically
-try {
-const controllerText = document.getElementById("controller-price-text");
-if (controllerText) {
-  if (plan === "hourly") controllerText.textContent = `₹39/hr`;
-  else if (plan === "day") controllerText.textContent = `₹199`;
-  else if (plan === "night") controllerText.textContent = `₹299`;
-}
-} catch (e) {
-  console.error("Controller price update error:", e);
-}
 
 
-// Sort by price descending to find the costliest
-selectedGameData.sort((a, b) => b.price - a.price);
+    function updateSummary() {
+      const plan = document.getElementById("selectedPlanInput")?.value || localStorage.getItem("selectedRentalPlan") || "hourly";
 
-selectedGameData.forEach((game, index) => {
-  if (index === 0) {
-    gameBreakdown.push(`<div>Game: ${game.name} <span class="line-through text-gray-500">₹${game.price}</span> <span class="text-green-600">FREE</span></div>`);
-  } else {
-    gameTotal += game.price;
-    gameBreakdown.push(`<div>Extra Game: ${game.name} – ₹${game.price}</div>`);
-  }
-});
+      // Get plan config to check if time should be hidden
+      let selectedCity = localStorage.getItem("selectedCity");
+
+      const planConfig = CITY_PLAN_CONFIG[selectedCity]?.[plan] || {};
+      const showTimeInSummary = !planConfig.hideFixedTime;
 
 
-  // Coupon discount
-  let couponDiscount = 0;
-  selectedCity = localStorage.getItem("selectedCity");
+      const bookingDate = document.getElementById("booking-date")?.value || "";
+      const startTime = document.getElementById("startTime")?.selectedOptions?.[0]?.textContent || "";
+      const endTime = document.getElementById("endTime")?.selectedOptions?.[0]?.textContent || "";
+      const fixedStartTime = document.getElementById("fixedStartTime")?.value || "";
+      const fixedEndTime = document.getElementById("fixedEndTime")?.value || "";
 
-if (appliedCoupon === "leazo") {
-  if (["Pratapgarh", "Neemuch"].includes(selectedCity)) {
-    if (plan === "day") couponDiscount = 400;
-    if (plan === "night") couponDiscount = 700;
-  } else {
-    if (plan === "hourly") couponDiscount = 0.5 * planPrice;
-    if (plan === "day") couponDiscount = 500;
-    if (plan === "night") couponDiscount = 800;
-  }
-}
+      const startInput = document.getElementById("startTime");
+      const endInput = document.getElementById("endTime");
 
 
-  let deliveryCharge = 99; // default fallback
+
+           let planPrice = 0;
+      let hours = 0;
+
+      const selectedGames = document.querySelectorAll('input[name="Games[]"]:checked');
+      const gameNames = Array.from(selectedGames).map(input => input.value);
+      const paymentMethod = document.getElementById("paymentMethod")?.value || "cod";
+
+      // ⭐ Get plan data from CITY_PLAN_CONFIG
+      const cityKey = selectedCity || "default";
+      const cityPlans = CITY_PLAN_CONFIG[cityKey] || CITY_PLAN_CONFIG.default || {};
+      const selectedPlanConfig = cityPlans[plan] || {};
+
+      // Safely calculate hours + plan price from CITY_PLAN_CONFIG
+      if (plan === "hourly" && startInput && endInput) {
+        const start = parseInt(startInput.value, 10);
+        const end = parseInt(endInput.value, 10);
+        hours = end - start;
+
+        if (!isNaN(hours) && hours > 0) {
+          // Use MRP from CITY_PLAN_CONFIG, e.g. "₹199/hr" → 199
+          let hourlyMrp = 199; // fallback
+          if (typeof selectedPlanConfig.mrp === "string") {
+            const match = selectedPlanConfig.mrp.match(/(\d+)/);
+            if (match) hourlyMrp = parseInt(match[1], 10);
+          }
+          planPrice = hours * hourlyMrp;
+        } else {
+          planPrice = 0;
+        }
+      } else {
+        // Non-hourly plans: use MRP from CITY_PLAN_CONFIG, e.g. "₹999" → 999
+        if (typeof selectedPlanConfig.mrp === "string") {
+          const match = selectedPlanConfig.mrp.match(/(\d+)/);
+          if (match) {
+            planPrice = parseInt(match[1], 10);
+          }
+        }
+      }
+
+
+
+
+      // 🎮 Game pricing with most expensive one free
+      let gameTotal = 0;
+      let gameBreakdown = [];
+
+      let selectedGameData = Array.from(selectedGames).map(input => ({
+        name: input.value,
+        price: parseFloat(input.dataset.price) || 0
+      }));
+
+
+
+      // Controller pricing – dynamic based on plan
+      const addController = document.getElementById("addController")?.checked;
+      let controllerCharge = 0;
+      if (addController) {
+        const controllerRates = {
+          day: 99,
+          night: 99,
+          daynight: 199,
+          weekly: 399,
+          halfmonth: 499,
+          monthly: 999
+        };
+
+        if (plan === "hourly") {
+          controllerCharge = 29 * (hours || 2);
+        } else {
+          controllerCharge = controllerRates[plan] || 0;
+        }
+      }
+
+
+      // Update controller price text dynamically
+      try {
+        const controllerText = document.getElementById("controller-price-text");
+        if (controllerText) {
+          const controllerPrices = {
+            hourly: "₹29/hr",
+            day: "₹99",
+            night: "₹99",
+            daynight: "₹199",
+            weekly: "₹399",
+            halfmonth: "₹499",
+            monthly: "₹999"
+          };
+
+          controllerText.textContent = controllerPrices[plan] || "₹0";
+        }
+
+
+      } catch (e) {
+        console.error("Controller price update error:", e);
+      }
+
+
+      // Sort by price descending to find the costliest
+      // Sort by price descending so free ones are the costliest
+      selectedGameData.sort((a, b) => b.price - a.price);
+      // 🧠 Get selected plan and define free limits dynamically
+
+      const freeLimit = FREE_GAME_LIMITS[plan] || 2;
+
+
+      // 💰 Calculate total and breakdown dynamically
+      selectedGameData.forEach((game, index) => {
+        if (index < freeLimit) {
+          // Within free limit
+          gameBreakdown.push(
+            `<div>Game: ${game.name} <span class="line-through text-gray-500">₹${game.price}</span> <span class="text-green-600">FREE</span></div>`
+          );
+        } else {
+          // Beyond free limit — chargeable
+          gameTotal += game.price;
+          gameBreakdown.push(
+            `<div>Extra Game: ${game.name} – ₹${game.price}</div>`
+          );
+        }
+      });
+
+
+
+
+
+// -----------------------------
+// COUPON DISCOUNT (LEAZO)
+// -----------------------------
+let couponDiscount = 0;
 selectedCity = localStorage.getItem("selectedCity");
 
-if (selectedCity && cityDeliveryPrices[selectedCity]) {
-  deliveryCharge = cityDeliveryPrices[selectedCity];
-}
-  const subtotal = planPrice + controllerCharge + gameTotal + deliveryCharge;
-  const afterCoupon = subtotal - couponDiscount;
+const couponGroup = CITY_COUPON_CONFIG[selectedCity];
 
-  // UPI discount
-  let upiDiscount = 0;
-  if (paymentMethod === "upi") {
-    upiDiscount = Math.round(afterCoupon * 0.05);
-  }
+if (appliedCoupon === "leazo" && couponGroup) {
+    const coupon = couponGroup[plan];
 
-  const total = Math.max(afterCoupon - upiDiscount, 0);
-  document.getElementById("totalAmount").textContent = total;
-
- let couponAmountText = "";
-if (["Pratapgarh", "Neemuch"].includes(selectedCity)) {
-  if (plan === "day") couponAmountText = "₹400";
-  else if (plan === "night") couponAmountText = "₹700";
-} else {
-  if (plan === "hourly") couponAmountText = "50%";
-  else if (plan === "day") couponAmountText = "₹500";
-  else if (plan === "night") couponAmountText = "₹800";
+    if (coupon) {
+        if (coupon.discountType === "percent") {
+            couponDiscount = Math.ceil(planPrice * coupon.value);
+        } else {
+            couponDiscount = coupon.value;
+        }
+    }
 }
 
-  document.getElementById("couponAmountText").textContent = couponAmountText;
+// -----------------------------
+// COUPON TEXT (UI)
+// -----------------------------
+let couponAmountText = "—";
 
-  // ⏱ Booking details
-  const bookingDetailsHTML = `
-    <div>Plan: ${plan.charAt(0).toUpperCase() + plan.slice(1)} Plan</div>
+if (couponGroup && couponGroup[plan]?.text) {
+    couponAmountText = couponGroup[plan].text;
+}
+
+document.getElementById("couponAmountText").textContent = couponAmountText;
+
+
+
+
+      let referralDiscount = window.referralDiscount || 0;
+
+
+
+
+
+      let deliveryCharge = 99; // default fallback
+
+if (selectedCity && CITY_DISTANCE_GROUP[selectedCity]) {
+  const group = CITY_DISTANCE_GROUP[selectedCity];
+  deliveryCharge = DELIVERY_CHARGES[group]; 
+}
+
+      const subtotal = planPrice + controllerCharge + gameTotal + deliveryCharge;
+      const afterCoupon = subtotal - couponDiscount - referralDiscount;
+
+      // UPI discount
+      let upiDiscount = 0;
+      if (paymentMethod === "upi") {
+        upiDiscount = Math.round(afterCoupon * 0.05);
+      }
+
+      const total = Math.max(afterCoupon - upiDiscount, 0);
+      document.getElementById("totalAmount").textContent = total;
+
+
+      document.getElementById("couponAmountText").textContent = couponAmountText;
+
+      // ⏱ Booking details
+      const bookingDetailsHTML = `
+   <div>Plan: ${planNames?.[plan] || plan}</div>
+
     <div>Date: ${bookingDate}</div>
-    ${plan === "hourly" 
-      ? `<div>Time: ${startTime} - ${endTime} (${hours} Hours)</div>` 
-      : `<div>Time: ${fixedStartTime} - ${fixedEndTime}</div>`}
+${showTimeInSummary
+          ? (
+            plan === "hourly"
+              ? `<div>Time: ${startTime} - ${endTime} (${hours} Hours)</div>`
+              : `<div>Time: ${fixedStartTime} - ${fixedEndTime}</div>`
+          )
+          : ""
+        }
+
   `;
 
-  const totalLine = (couponDiscount > 0 || upiDiscount > 0)
-    ? `Total: <span class="line-through text-gray-500">₹${subtotal}</span> ₹${total}`
-    : `Total: ₹${subtotal}`;
+      const totalLine = (couponDiscount > 0 || upiDiscount > 0)
+        ? `Total: <span class="line-through text-gray-500">₹${subtotal}</span> ₹${total}`
+        : `Total: ₹${subtotal}`;
 
-  const summaryHTML = `
+      const summaryHTML = `
     <button type="button" onclick="goToStep(1)" class="absolute top-2 right-2 text-xs text-blue-600 border border-blue-600 rounded-xl px-2 py-0.5 hover:bg-blue-50 transition">
       Change Games
     </button>
@@ -1365,252 +1953,288 @@ if (["Pratapgarh", "Neemuch"].includes(selectedCity)) {
     ${controllerCharge > 0 ? `<div>Extra Controller: ₹${controllerCharge}</div>` : ''}
     <div>Delivery, Installation & Pick Up: ₹${deliveryCharge}</div>
     ${couponDiscount > 0 ? `<div class='text-green-600'>Coupon Discount: -₹${couponDiscount}</div>` : ''}
+    ${referralDiscount > 0 ? `<div class='text-green-600'>Gift Card Discount: -₹${referralDiscount}</div>` : ''}
     ${upiDiscount > 0 ? `<div class='text-green-600'>UPI Discount (5%): -₹${upiDiscount}</div>` : ''}
     <div class='font-medium text-lg mt-2'>${totalLine}</div>
   `;
 
-  document.getElementById("bookingSummary").innerHTML = bookingDetailsHTML;
-  document.getElementById("summaryBreakdown").innerHTML = summaryHTML;
-}
+      document.getElementById("bookingSummary").innerHTML = bookingDetailsHTML;
+      document.getElementById("summaryBreakdown").innerHTML = summaryHTML;
+    }
+
+    function showDiscountPopup(amount) {
+      const popup = document.getElementById("discountPopup");
+      const content = document.getElementById("discountPopupContent");
+      const discountText = document.getElementById("discountAmount");
+
+      discountText.textContent = `₹${amount}`;
+      popup.classList.remove("hidden");
+
+      // Animate both overlay and content
+      setTimeout(() => {
+        popup.classList.remove("opacity-0");
+        popup.classList.add("opacity-100");
+
+        content.classList.remove("opacity-0", "scale-90");
+        content.classList.add("opacity-100", "scale-100");
+      }, 20);
+
+      // Confetti 🎉
+      confetti({
+        particleCount: 60,
+        spread: 70,
+        origin: { y: 0.6 },
+        ticks: 140
+      });
+
+      // Auto hide after 1.8s
+      setTimeout(() => hideDiscountPopup(), 1800);
+
+      // Manual dismiss
+      popup.onclick = hideDiscountPopup;
+
+      function hideDiscountPopup() {
+        popup.classList.remove("opacity-100");
+        popup.classList.add("opacity-0");
+
+        content.classList.remove("opacity-100", "scale-100");
+        content.classList.add("opacity-0", "scale-90");
+
+        setTimeout(() => popup.classList.add("hidden"), 300);
+      }
+    }
 
 
-function showToast(msg) {
-  const toast = document.createElement("div");
-  toast.textContent = msg;
 
-  toast.className = `
-    fixed top-10 left-1/2 transform -translate-x-1/2 
-    bg-black text-white text-sm px-4 py-2 rounded-lg shadow-lg z-[9999]
+
+    function showToast(msg) {
+      const toast = document.createElement("div");
+      toast.textContent = msg;
+
+      toast.className = `
+    fixed top-32 left-1/2 transform -translate-x-1/2 
+    bg-black text-white text-md px-4 py-2 rounded-lg shadow-lg z-[9999]
     max-w-[90%] w-fit text-center whitespace-pre-line
   `.replace(/\s+/g, ' ').trim();
 
-  document.body.appendChild(toast);
+      document.body.appendChild(toast);
 
-  setTimeout(() => toast.remove(), 3000);
-}
+      setTimeout(() => toast.remove(), 3000);
+    }
 
-document.getElementById("bookingForm").addEventListener("submit", function(e) {
-  e.preventDefault(); // stop default page reload
+    document.getElementById("bookingForm").addEventListener("submit", function (e) {
+      e.preventDefault(); // stop default page reload
 
-  const btn = document.getElementById("bookBtn");
-  btn.disabled = true;
-  btn.innerHTML = `
+      const btn = document.getElementById("bookBtn");
+      btn.disabled = true;
+      btn.innerHTML = `
     <svg class="animate-spin h-5 w-5 mr-2 inline" viewBox="0 0 24 24">
       <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" fill="none"/>
       <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.372 0 0 5.372 0 12h4z"/>
     </svg> Booking...
   `;
 
-  fetch(this.action, {
-    method: this.method,
-    body: new FormData(this),
-    headers: { 'Accept': 'application/json' }
-  }).then(response => {
-    if (response.ok) {
-      showToast('Booking Confirmed');
-      this.reset();
-      btn.disabled = false;
-      btn.textContent = 'Book Now';
-      document.getElementById('bookingModal').classList.add('hidden'); // close modal
-    } else {
-      showToast('Something went wrong\nPlease try again or Call/Whatsapp on 9202227070');
-      btn.disabled = false;
-      btn.textContent = 'Book Now';
-    }
-  }).catch(error => {
-    showToast('Network error\nCheck your connection or Call/Whatsapp on 9202227070');
-    btn.disabled = false;
-    btn.textContent = 'Book Now';
-  });
-});
-
-
-function resetBookingState() {
-  // Reset coupon
-  document.getElementById("couponCode").value = "";
-  appliedCoupon = null;
-
-  // Reset payment
-  document.getElementById("paymentMethod").value = "no choose";
-  document.querySelectorAll(".payment-option").forEach(el =>
-    el.classList.remove("ring", "ring-blue-500", "ring-2")
-  );
-
-  // ✅ Reset controller
-  const controllerCheckbox = document.getElementById("addController");
-  const controllerOption = document.getElementById("controller-option");
-  const controllerText = document.getElementById("controller-price-text");
-
-  if (controllerCheckbox) controllerCheckbox.checked = false;
-  if (controllerOption) controllerOption.classList.add("hidden"); // hide if no multiplayer
-  if (controllerText) controllerText.textContent = "₹199"; // reset default price
-
-  // ✅ Reset multiplayer toggle
-  const multiplayerToggle = document.getElementById("multiplayerToggle");
-  if (multiplayerToggle) multiplayerToggle.checked = false;
-
-  // ✅ Reset all games to visible and deselected
-  document.querySelectorAll(".game-card").forEach(card => {
-    const checkbox = card.querySelector("input[type='checkbox']");
-    const img = card.querySelector("img");
-    card.classList.remove("hidden"); // show all games
-    if (checkbox) checkbox.checked = false;
-    if (img) img.classList.remove("ring", "ring-[2.5px]", "ring-black", "ring-blue-700");
-  });
-
-  updateSummary();
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  const savedCity = localStorage.getItem("selectedCity");
-  const cityModal = document.getElementById("cityModal");
-
-  if (!savedCity) {
-    cityModal.classList.remove("hidden");
-  } else {
-    // 👇 Call pricing update if city is already stored
-    updatePlanCardPricingByCity(savedCity);
-
-    // Hide hourly plan if needed
-    const hourlyPlanCard = document.querySelector('[data-plan="hourly"]');
-    if (hourlyPlanCard) {
-      if (["Pratapgarh", "Neemuch"].includes(savedCity)) {
-        hourlyPlanCard.classList.add("hidden");
-      } else {
-        hourlyPlanCard.classList.remove("hidden");
-      }
-    }
-  }
-
-  // ✅ City button click handler
-  document.querySelectorAll(".city-btn").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const selectedCity = btn.dataset.city;
-      localStorage.setItem("selectedCity", selectedCity);
-      updatePlanCardPricingByCity(selectedCity);
-      cityModal.classList.add("hidden");
-
-      // Hide hourly plan for Pratapgarh & Neemuch
-      const hourlyPlanCard = document.querySelector('[data-plan="hourly"]');
-      if (hourlyPlanCard) {
-        if (["Pratapgarh", "Neemuch"].includes(selectedCity)) {
-          hourlyPlanCard.classList.add("hidden");
+      fetch(this.action, {
+        method: this.method,
+        body: new FormData(this),
+        headers: { 'Accept': 'application/json' }
+      }).then(response => {
+        if (response.ok) {
+          showToast('Booking Confirmed');
+          this.reset();
+          btn.disabled = false;
+          btn.textContent = 'Book Now';
+          document.getElementById('bookingModal').classList.add('hidden'); // close modal
         } else {
-          hourlyPlanCard.classList.remove("hidden");
+          showToast('Something went wrong\nPlease try again or Call/Whatsapp on 9202227070');
+          btn.disabled = false;
+          btn.textContent = 'Book Now';
         }
+      }).catch(error => {
+        showToast('Network error\nCheck your connection or Call/Whatsapp on 9202227070');
+        btn.disabled = false;
+        btn.textContent = 'Book Now';
+      });
+    });
+
+
+    function resetBookingState() {
+      // Reset coupon
+      document.getElementById("couponCode").value = "";
+      appliedCoupon = null;
+
+      // Reset payment
+      document.getElementById("paymentMethod").value = "no choose";
+      document.querySelectorAll(".payment-option").forEach(el =>
+        el.classList.remove("ring", "ring-blue-500", "ring-2")
+      );
+
+      // ✅ Reset controller
+      const controllerCheckbox = document.getElementById("addController");
+      const controllerOption = document.getElementById("controller-option");
+      const controllerText = document.getElementById("controller-price-text");
+
+      if (controllerCheckbox) controllerCheckbox.checked = false;
+      if (controllerOption) controllerOption.classList.add("hidden"); // hide if no multiplayer
+      if (controllerText) controllerText.textContent = "₹99"; // reset default price
+
+      // ✅ Reset multiplayer toggle
+      const multiplayerToggle = document.getElementById("multiplayerToggle");
+      if (multiplayerToggle) multiplayerToggle.checked = false;
+
+      // ✅ Reset all games to visible and deselected
+      document.querySelectorAll(".game-card").forEach(card => {
+        const checkbox = card.querySelector("input[type='checkbox']");
+        const img = card.querySelector("img");
+        card.classList.remove("hidden"); // show all games
+        if (checkbox) checkbox.checked = false;
+        if (img) img.classList.remove("ring", "ring-[2.5px]", "ring-black", "ring-blue-700");
+      });
+
+      updateSummary();
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const savedCity = localStorage.getItem("selectedCity");
+      const cityModal = document.getElementById("cityModal");
+
+      if (!savedCity) {
+        cityModal.classList.remove("hidden");
+      } else {
+        // 👇 Call pricing update if city is already stored
+        updatePlanCardPricingByCity(savedCity);
+
       }
 
-      const cityInput = document.querySelector('input[name="city"]');
-      if (cityInput) cityInput.value = selectedCity;
+      // ✅ City button click handler
+      document.querySelectorAll(".city-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const selectedCity = btn.dataset.city;
+          localStorage.setItem("selectedCity", selectedCity);
+          updatePlanCardPricingByCity(selectedCity);
+          cityModal.classList.add("hidden");
 
-      showToast(`You selected ${selectedCity}`);
+          const cityInput = document.querySelector('input[name="city"]');
+          if (cityInput) cityInput.value = selectedCity;
+
+          showToast(`You selected ${selectedCity}`);
+          renderPlans(selectedCity);
+
+        });
+      });
     });
-  });
-});
 
 
-function updatePlanCardPricingByCity(city) {
-  const dayPrice = document.getElementById("dayOfferPrice");
-  const dayBadge = document.getElementById("dayPlanBadge");
-  const dayCoupon = document.getElementById("dayCouponCard");
-  const nightPrice = document.getElementById("nightOfferPrice");
-  const nightBadge = document.getElementById("nightPlanBadge");
-  const nightCoupon = document.getElementById("nightCouponCard");
-  const dayTime = document.getElementById("dayTimeDescrip");
+    function updatePlanCardPricingByCity(city) {
+      const cityData = CITY_PLAN_CONFIG[city] || CITY_PLAN_CONFIG.default;
 
-  if (!dayPrice || !dayBadge || !dayCoupon || !nightPrice || !nightBadge || !nightCoupon || !dayTime) return;
+      document.querySelectorAll("[data-plan]").forEach(card => {
+        const plan = card.getAttribute("data-plan");
+        const config = cityData[plan];
+        if (!config) return;
 
-  if (["Neemuch", "Pratapgarh"].includes(city)) {
-    dayPrice.textContent = "₹599";
-    dayBadge.textContent = "₹400 OFF";
-    dayCoupon.innerHTML = `Use code <span class="font-bold">LEAZO</span><br>
-      and get extra ₹400 off`
-    dayTime.textContent = "Morning 11 AM - Evening 8 PM"
+        // 🏷️ Update MRP (crossed-out text)
+        const mrpEl = card.querySelector(".text-gray-500.line-through");
+        if (mrpEl) mrpEl.textContent = config.mrp;
 
-    nightPrice.textContent = "₹799";
-    nightBadge.textContent = "₹700 OFF";
-    nightCoupon.innerHTML = `Use code <span class="font-bold">LEAZO</span><br>
-      and get extra ₹700 off`
-  } else {
-    // Default for Mandsaur or others
-    dayPrice.textContent = "₹499";
-    dayBadge.textContent = "₹500 OFF";
-    dayCoupon.innerHTML = `Use code <span class="font-bold">LEAZO</span><br>
-      and get extra ₹500 off`
-    dayTime.textContent = "Morning 11 AM - Evening 8 PM"
+        // 💰 Main Offer Price (large price below MRP)
+        const offerEl = card.querySelector(".text-2xl.font-semibold.mt-1");
+        if (offerEl) offerEl.textContent = config.offer;
 
-    nightPrice.textContent = "₹699";
-    nightBadge.textContent = "₹800 OFF";
-    nightCoupon.innerHTML = `Use code <span class="font-bold">LEAZO</span><br>
-      and get extra ₹800 off` 
-  }
-}
+        // 💛 Yellow Box Offer Price (inside "Offer" section)
+        const yellowOfferEl = card.querySelector(
+          '.bg-yellow-400 p.text-2xl.md\\:text-3xl.font-bold'
+        );
+        if (yellowOfferEl) {
+          // Extract only numeric part (₹xxxx) to match your layout
+          const priceOnly = config.offer.split("/")[0].trim();
+          yellowOfferEl.textContent = priceOnly;
+        }
 
-function generateReferenceNumber() {
-  // Simple random 8-digit alphanumeric code
-  return 'LEAZO-' + Math.floor(100000 + Math.random() * 900000);
-}
+        // 🎯 Badge (top-right red badge)
+        const badgeEl = card.querySelector(".absolute.top-2.right-2");
+        if (badgeEl) badgeEl.textContent = config.badge;
 
-document.getElementById("bookBtn").addEventListener("click", function(e) {
-  e.preventDefault();
+        // 🎟️ Coupon Text (black box right section)
+        const couponEl = card.querySelector(".bg-black.text-white p");
+        if (couponEl)
+          couponEl.innerHTML = `Use code <span class="font-bold">LEAZO</span><br>and get extra ${config.couponText} off`;
 
-  const form = document.getElementById("bookingForm");
-
-  // Remove required from hidden fields before validating
-  document.querySelectorAll("[required]").forEach(el => {
-    if (el.offsetParent === null) { // hidden element
-      el.required = false;
+        // 📜 Plan Description List (<ul>)
+        const descUl = card.querySelector("ul");
+        if (descUl)
+          descUl.innerHTML = config.description.map(li => `<li>${li}</li>`).join("");
+      });
     }
-  });
-
-  if (!form.checkValidity()) {
-    form.reportValidity();
-    return;
-  }
-  // Ensure payment method is selected
-const paymentMethod = document.getElementById("paymentMethod").value;
-if (!paymentMethod) {
-  showToast("Select a Payment Method");
-  return;
-}
 
 
-  // Gather extra booking details
-  const selectedCity = localStorage.getItem("selectedCity") || "Not Selected";
-  const controllerSelected = document.getElementById("addController")?.checked ? "Yes" : "No";
-  const twoPlayerToggle = document.getElementById("filterMultiplayer")?.checked ? "On" : "Off";
-  const couponCode = document.getElementById("couponCode")?.value || "None";
 
-  // Read breakdown & total from Step 3
-  const priceBreakdown = document.getElementById("summaryBreakdown")?.innerText || "";
-  const totalAmount = document.getElementById("totalAmount")?.innerText || "0";
 
-  // Helper to create/update hidden inputs
-  function setHiddenField(name, value) {
-    let input = form.querySelector(`input[name="${name}"]`);
-    if (!input) {
-      input = document.createElement("input");
-      input.type = "hidden";
-      input.name = name;
-      form.appendChild(input);
+
+
+    function generateReferenceNumber() {
+      // Simple random 8-digit alphanumeric code
+      return 'LEAZO-' + Math.floor(100000 + Math.random() * 900000);
     }
-    input.value = value;
-  }
 
-  // Append all extra fields
-  setHiddenField("Submission Stage", "Final Confirmed Booking");
-  setHiddenField("Selected City", selectedCity);
-  setHiddenField("Extra Controller Selected", controllerSelected);
-  setHiddenField("2 Player Toggle", twoPlayerToggle);
-  setHiddenField("Coupon Code", couponCode);
-  setHiddenField("Price Breakdown", priceBreakdown);
-  setHiddenField("Total Amount", `₹${totalAmount}`);
+    document.getElementById("bookBtn").addEventListener("click", function (e) {
+      e.preventDefault();
+
+      const form = document.getElementById("bookingForm");
+
+      // Remove required from hidden fields before validating
+      document.querySelectorAll("[required]").forEach(el => {
+        if (el.offsetParent === null) { // hidden element
+          el.required = false;
+        }
+      });
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
 
 
-  // Button loading state
-  const btn = this;
-  btn.disabled = true;
-  btn.innerHTML = `
+      // Gather extra booking details
+      const selectedCity = localStorage.getItem("selectedCity") || "Not Selected";
+      const controllerSelected = document.getElementById("addController")?.checked ? "Yes" : "No";
+      const twoPlayerToggle = document.getElementById("filterMultiplayer")?.checked ? "On" : "Off";
+      const couponCode = document.getElementById("couponCode")?.value || "None";
+      const referralCodeInput = document.getElementById("referralCodeInput")?.value || "None";
+
+      // Read breakdown & total from Step 3
+      const priceBreakdown = document.getElementById("summaryBreakdown")?.innerText || "";
+      const totalAmount = document.getElementById("totalAmount")?.innerText || "0";
+
+      // Helper to create/update hidden inputs
+      function setHiddenField(name, value) {
+        let input = form.querySelector(`input[name="${name}"]`);
+        if (!input) {
+          input = document.createElement("input");
+          input.type = "hidden";
+          input.name = name;
+          form.appendChild(input);
+        }
+        input.value = value;
+      }
+      const refNumber = generateReferenceNumber();
+
+      // Append all extra fields
+      setHiddenField("Submission Stage", "Final Confirmed Booking");
+      setHiddenField("Selected City", selectedCity);
+      setHiddenField("Extra Controller Selected", controllerSelected);
+      setHiddenField("2 Player Toggle", twoPlayerToggle);
+      setHiddenField("Coupon Code", couponCode);
+      setHiddenField("Referral Code", referralCodeInput);
+      setHiddenField("Price Breakdown", priceBreakdown);
+      setHiddenField("Total Amount", `₹${totalAmount}`);
+      setHiddenField("Reference Number", refNumber);
+
+
+      // Button loading state
+      const btn = this;
+      btn.disabled = true;
+      btn.innerHTML = `
     <svg class="animate-spin h-5 w-5 mr-2 inline" viewBox="0 0 24 24">
       <circle class="opacity-25" cx="12" cy="12" r="10"
         stroke="currentColor" stroke-width="4" fill="none"/>
@@ -1619,173 +2243,283 @@ if (!paymentMethod) {
     </svg> Booking...
   `;
 
-  // Send to Formcarry
-  fetch("https://formcarry.com/s/15lg9WIB6XN", {
-    method: "POST",
-    body: new FormData(form),
-    headers: { 'Accept': 'application/json' }
-  })
-    .then(response => {
-    if (response.ok) {
-      const refNumber = generateReferenceNumber();
+      // Send to Formcarry
+      fetch("https://formcarry.com/s/CPgVxLB5qn", {
+        method: "POST",
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      })
+        .then(response => {
+          if (response.ok) {
 
-      // Add the reference number to Formcarry submission too
-      setHiddenField("Reference Number", refNumber);
+            // Redirect to thank-you page with reference number in URL
+            window.location.href = `booking-confirmation.html?ref=${encodeURIComponent(refNumber)}`;
+          } else {
+            showToast("Click again");
+          }
+        })
 
-      // Redirect to thank-you page with reference number in URL
-      window.location.href = `booking-confirmation.html?ref=${encodeURIComponent(refNumber)}`;
-    } else {
-      showToast("Error sending booking\nCall/Whatsapp on 9202227070");
-    }
-  })
-
-  .catch(() => {
-    showToast("Network error\nCall/Whatsapp on 9202227070");
-  })
-  .finally(() => {
-    btn.disabled = false;
-    btn.textContent = "Book Now";
-  });
-});
+        .catch(() => {
+          showToast("Network error\nCall/Whatsapp on 9202227070");
+        })
+        .finally(() => {
+          btn.disabled = false;
+          btn.textContent = "Book Now";
+        });
+    });
 
 
 
+  </script>
+
+  <!-- END OF UPDATED MULTISTEP BOOKING MODAL -->
+  <!-- Trust Section (2 columns on mobile, 3 on desktop) -->
+  <!-- Trust Section (with Cash on Delivery) -->
+  <section class="bg-gradient-to-r from-yellow-100 via-white to-yellow-50 py-12 px-6">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-10 text-gray-800">
+        Why Gamers Trust <span class="text-yellow-500">Leazo</span>
+      </h2>
+
+      <div class="grid gap-6 grid-cols-2 md:grid-cols-4">
+        <!-- Cash on Delivery -->
+        <div
+          class="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center text-center hover:shadow-2xl transition transform hover:-translate-y-1">
+          <div class="bg-yellow-100 p-4 rounded-full mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-yellow-600" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M2.25 18.75a60.07 60.07 0 0 1 15.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 0 1 3 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 0 0-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 0 1-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 0 0 3 15h-.75M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm3 0h.008v.008H18V10.5Zm-12 0h.008v.008H6V10.5Z" />
+            </svg>
+
+          </div>
+          <h3 class="text-xl font-semibold">Cash on Delivery</h3>
+          <p class="hidden md:block text-gray-600 mt-2">Pay easily with COD — no need for online transactions.</p>
+        </div>
+
+        <!-- Home Delivery -->
+        <div
+          class="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center text-center hover:shadow-2xl transition transform hover:-translate-y-1">
+          <div class="bg-yellow-100 p-4 rounded-full mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-yellow-600" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M3 7h13v10H3V7zm13 0l5 5v5h-5V7zM5 17a2 2 0 104 0 2 2 0 00-4 0zm10 0a2 2 0 104 0 2 2 0 00-4 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold">Home Delivery</h3>
+          <p class="hidden md:block text-gray-600 mt-2">Get your PS5 and games delivered right to your doorstep,
+            hassle-free.</p>
+        </div>
 
 
-</script>
 
-<!-- END OF UPDATED MULTISTEP BOOKING MODAL -->
+        <!-- Affordable Price -->
+        <div
+          class="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center text-center hover:shadow-2xl transition transform hover:-translate-y-1">
+          <div class="bg-yellow-100 p-4 rounded-full mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-yellow-600" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M15 8.25H9m6 3H9m3 6-3-3h1.5a3 3 0 1 0 0-6M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+            </svg>
 
-    <!-- How It Works -->
-    <section id="how" class="px-4 pt-8 pb-16 bg-gray-50">
-      <div class="container mx-auto text-center">
-        <h3 class="text-2xl md:text-3xl font-bold mb-6">How It Works</h3>
-        <div class="space-y-8 text-center max-w-xl mx-auto text-base leading-relaxed font-medium">
-  <div>
-    <h4 class="text-xl font-semibold text-blue-700 mb-2">Step 1</h4>
-    <p class="text-gray-700">Select Plan, Game, Date and Time</p>
-  </div>
-  <div>
-    <h4 class="text-xl font-semibold text-blue-700 mb-2">Step 2</h4>
-    <p class="text-gray-700">Enter Delivery Address</p>
-  </div>
-  <div>
-    <h4 class="text-xl font-semibold text-blue-700 mb-2">Step 3</h4>
-<p class="text-gray-700">Place your Booking</p>
-  </div>
-  <div>
-    <h4 class="text-xl font-semibold text-blue-700 mb-2">Step 4</h4>
-    <p class="text-gray-700">Delivery & Installation will be Done</p>
-  </div>
+          </div>
+          <h3 class="text-xl font-semibold">Affordable Price</h3>
+          <p class="hidden md:block text-gray-600 mt-2">We guarantee the best rental prices — play more, spend less.</p>
+        </div>
+        <!-- No Deposit -->
+        <div
+          class="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center text-center hover:shadow-2xl transition transform hover:-translate-y-1">
+          <div class="bg-yellow-100 p-4 rounded-full mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-yellow-600" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
+            </svg>
+
+          </div>
+          <h3 class="text-xl font-semibold">No Deposit</h3>
+          <p class="hidden md:block text-gray-600 mt-2">Play without worries — we don’t ask for any security deposits.
+          </p>
+        </div>
+
 
       </div>
-    </section>
+    </div>
+  </section>
 
-    
+  <!--
+//How It Works Section
+<section id="how" class="bg-gray-50 py-12 px-6">
+  <div class="container mx-auto text-center">
+    <h2 class="text-3xl md:text-4xl font-bold mb-10">How It Works</h2>
+
+    <div class="grid gap-8 md:grid-cols-3">
+
+      //Step 1
+      <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center text-center hover:shadow-xl transition">
+        <h3 class="text-xl font-semibold mb-2">1. Choose Your Plan</h3>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-11 w-11 text-blue-600 mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+  </svg>
+        
+        <p class="text-gray-600">Select from Hourly, Day, or Night plans that suit your gaming needs.</p>
+      </div>
+
+      //Step 2
+      <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center text-center hover:shadow-xl transition">
+        <h3 class="text-xl font-semibold mb-2">2. Select Games</h3>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-blue-600 mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+    d="M14.25 6.087c0-.355.186-.676.401-.959.221-.29.349-.634.349-1.003
+       0-1.036-1.007-1.875-2.25-1.875s-2.25.84-2.25 1.875c0 .369.128.713.349 1.003.215.283.401.604.401.959v0a.64.64 0 0 1-.657.643
+       48.39 48.39 0 0 1-4.163-.3c.186 1.613.293 3.25.315 4.907a.656.656 0 0 1-.658.663v0c-.355 0-.676-.186-.959-.401a1.647 1.647 0 0 0-1.003-.349
+       c-1.036 0-1.875 1.007-1.875 2.25s.84 2.25 1.875 2.25c.369 0 .713-.128 1.003-.349.283-.215.604-.401.959-.401v0c.31 0 .555.26.532.57
+       a48.039 48.039 0 0 1-.642 5.056c1.518.19 3.058.309 4.616.354a.64.64 0 0 0 .657-.643v0c0-.355-.186-.676-.401-.959a1.647 1.647 0 0 1-.349-1.003
+       c0-1.035 1.008-1.875 2.25-1.875 1.243 0 2.25.84 2.25 1.875 0 .369-.128.713-.349 1.003-.215.283-.4.604-.4.959v0c0 .333.277.599.61.58
+       a48.1 48.1 0 0 0 5.427-.63 48.05 48.05 0 0 0 .582-4.717.532.532 0 0 0-.533-.57v0c-.355 0-.676.186-.959.401-.29.221-.634.349-1.003.349
+       -1.035 0-1.875-1.007-1.875-2.25s.84-2.25 1.875-2.25c.37 0 .713.128 1.003.349.283.215.604.401.96.401v0a.656.656 0 0 0 .658-.663
+       48.422 48.422 0 0 0-.37-5.36c-1.886.342-3.81.574-5.766.689a.578.578 0 0 1-.61-.58v0Z" />
+</svg>
+
+
+        
+        <p class="text-gray-600">Pick your favorite PS5 games — first 2 are FREE, extra ones at a small cost.</p>
+      </div>
+
+      //Step 3 
+      <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center text-center hover:shadow-xl transition">
+        <h3 class="text-xl font-semibold mb-2">3. Get It Delivered</h3>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-blue-600 mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+    d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 0 0-3.213-9.193 2.056 2.056 0 0 0-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 0 0-10.026 0 1.106 1.106 0 0 0-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12">
+  </path>
+</svg>
+
+
+        <p class="text-gray-600">We deliver PS5 and accessories to your doorstep. Play, enjoy, return easily!</p>
+      </div>
+
+    </div>
+  </div>
+</section> -->
+
+
+  <!-- Google Reviews Section -->
+  <section id="reviews" class="px-4 py-12 bg-gray-50">
+    <div class="container mx-auto text-center">
+
+      <!-- Elfsight Google Reviews | Untitled Google Reviews -->
+      <script src="https://elfsightcdn.com/platform.js" async></script>
+      <div class="elfsight-app-3e6e3292-f68b-4ff3-b50d-7b4a2af4c1df" data-elfsight-app-lazy></div>
+    </div>
+  </section>
 
 
 
+  <section id="contact" class="w-full bg-black py-10">
+    <div class="max-w-5xl mx-auto px-6">
 
+      <!-- Desktop Layout: Contact + Quick Links side by side -->
+      <div class="hidden md:flex justify-between items-start">
 
+        <!-- Contact Info -->
+        <div>
+          <h2 class="text-xl md:text-3xl font-bold text-white mb-4">
+            Contact Us
+          </h2>
+          <p class="text-white text-md mt-3 mb-3">
+            Email: <a href="mailto:contact@leazo.in" class="text-blue-400">contact@leazo.in</a><br>Contact: +91
+            9202227070</p>
 
+          <a href="https://wa.me/919202227070" target="_blank"
+            class="inline-block bg-[#25D366] text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:scale-105 transition">
+            💬 Chat on WhatsApp
+          </a>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h2 class="text-xl font-bold text-white mb-4">Quick Links</h2>
+          <ul class="space-y-2">
+            <li><a href="referral-portal.html" class="text-gray-300 hover:text-[#FFD345] transition">Refer & Earn</a>
+            </li>
+            <li><a href="TnC.html" class="text-gray-300 hover:text-[#FFD345] transition">Terms & Conditions</a></li>
+            <li><a href="privacy-policy.html" class="text-gray-300 hover:text-[#FFD345] transition">Privacy Policy</a>
+            </li>
+            <li><a href="cancellation&refund-policy.html"
+                class="text-gray-300 hover:text-[#FFD345] transition">Cancellation & Refund Policy</a></li>
+          </ul>
+        </div>
 
       </div>
-    </section>
 
-    <section id="contact" class="w-full bg-black py-10">
-  <div class="max-w-5xl mx-auto px-6">
-
-    <!-- Desktop Layout: Contact + Quick Links side by side -->
-    <div class="hidden md:flex justify-between items-start">
-      
-      <!-- Contact Info -->
-      <div>
-        <h2 class="text-xl md:text-3xl font-bold text-white mb-4">
-      Contact Us
-    </h2>
-                <p class="text-white text-md mt-3 mb-3">
-      Email: <a href="mailto:contact@leazo.in" class="text-blue-400">contact@leazo.in</a><br>Contact: +91 9202227070</p>
+      <!-- Mobile Layout: Stack -->
+      <div class="md:hidden text-center">
+        <h2 class="text-2xl md:text-3xl font-bold text-white mb-5">
+          Contact Us
+        </h2>
 
         <a href="https://wa.me/919202227070" target="_blank"
-           class="inline-block bg-[#25D366] text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:scale-105 transition">
+          class="inline-block bg-[#25D366] text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:scale-105 transition">
           💬 Chat on WhatsApp
         </a>
+        <p class="text-white text-md mt-3 mb-3">
+          Email: <a href="mailto:contact@leazo.in" class="text-blue-400">contact@leazo.in</a><br>Contact: +91 9202227070
+        </p>
+
+        <h2 class="text-xl font-bold text-white mt-10 mb-4">Quick Links</h2>
+        <div class="flex flex-col items-center gap-2">
+          <a href="referral-portal.html" class="text-gray-300 hover:text-[#FFD345] transition">Refer & Earn</a>
+          <a href="TnC.html" class="text-gray-300 hover:text-[#FFD345] transition">Terms & Conditions</a>
+          <a href="privacy-policy.html" class="text-gray-300 hover:text-[#FFD345] transition">Privacy Policy</a>
+          <a href="cancellation&refund-policy.html" class="text-gray-300 hover:text-[#FFD345] transition">Cancellation &
+            Refund Policy</a>
+        </div>
       </div>
-
-      <!-- Quick Links -->
-      <div>
-        <h2 class="text-xl font-bold text-white mb-4">Quick Links</h2>
-        <ul class="space-y-2">
-          <li><a href="TnC.html" class="text-gray-300 hover:text-[#FFD345] transition">Terms & Conditions</a></li>
-          <li><a href="privacy-policy.html" class="text-gray-300 hover:text-[#FFD345] transition">Privacy Policy</a></li>
-          <li><a href="cancellation&refund-policy.html" class="text-gray-300 hover:text-[#FFD345] transition">Cancellation & Refund Policy</a></li>
-        </ul>
-      </div>
-
-    </div>
-
-    <!-- Mobile Layout: Stack -->
-    <div class="md:hidden text-center">
-      <h2 class="text-2xl md:text-3xl font-bold text-white mb-5">
-      Contact Us
-    </h2>
-       
-        <a href="https://wa.me/919202227070" target="_blank"
-           class="inline-block bg-[#25D366] text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:scale-105 transition">
-          💬 Chat on WhatsApp
-        </a>
-         <p class="text-white text-md mt-3 mb-3">
-      Email: <a href="mailto:contact@leazo.in" class="text-blue-400">contact@leazo.in</a><br>Contact: +91 9202227070</p>
-
-          <h2 class="text-xl font-bold text-white mt-10 mb-4">Quick Links</h2>
-      <div class="flex flex-col items-center gap-2">
-        <a href="TnC.html" class="text-gray-300 hover:text-[#FFD345] transition">Terms & Conditions</a>
-        <a href="privacy-policy.html" class="text-gray-300 hover:text-[#FFD345] transition">Privacy Policy</a>
-        <a href="cancellation&refund-policy.html" class="text-gray-300 hover:text-[#FFD345] transition">Cancellation & Refund Policy</a>
+      <div class="flex justify-center gap-6 mt-5">
+        <a href="https://instagram.com/leazo.in" target="_blank"
+          class="text-white text-2xl hover:text-[#FFD345] transition"><img src="instagramicon.webp" alt="Instagram"
+            class="w-7 h-7" loading="lazy" decoding="async"></a>
+        <a href="https://www.facebook.com/profile.php?id=61577716333704#" target="_blank"
+          class="text-white text-2xl hover:text-[#FFD345] transition"><img src="facebookicon.webp" alt="Facebook"
+            class="w-7 h-7" loading="lazy" decoding="async"></a>
       </div>
     </div>
-          <div class="flex justify-center gap-6 mt-5">
-      <a href="https://instagram.com/leazo.in" target="_blank" class="text-white text-2xl hover:text-[#FFD345] transition"><img src="instagramicon.png" alt="YouTube" class="w-7 h-7"></a>
-      <a href="https://www.facebook.com/profile.php?id=61577716333704#" target="_blank" class="text-white text-2xl hover:text-[#FFD345] transition"><img src="facebookicon.png" alt="YouTube" class="w-7 h-7"></a>
-    </div>
-    </div>
 
 
+    </div>
+  </section>
+
+
+
+  <footer class="bg-black text-white text-center py-4 text-sm text-gray-600">
+    &copy; 2025 Leazo. All rights reserved.
+  </footer>
+
+  <!-- City Selection Modal with Icons -->
+
+  <!-- Discount Popup -->
+  <!-- Discount Popup Modal -->
+  <!-- Discount Popup Modal -->
+  <div id="discountPopup" class="fixed inset-0 bg-black/50 flex items-center justify-center hidden z-50 
+         opacity-0 transition-opacity duration-300 ease-out">
+    <div id="discountPopupContent" class="bg-white px-6 py-4 rounded-2xl shadow-xl text-center max-w-sm 
+           opacity-0 scale-90 transition-all duration-300 ease-out">
+      <h2 class="text-2xl font-bold text-blue-600 mb-1">🎉</h2>
+      <h2 class="text-xl font-bold text-blue-500 ">Discount Applied!</h2>
+      <p class="text-lg font-medium ">You Saved </p>
+      <p id="discountAmount" class="text-xl text-green-600 font-bold mb-1"></p>
+    </div>
   </div>
-</section>
+
+
+  <!-- Discount Popup -->
 
 
 
-    <footer class="bg-black text-white text-center py-4 text-sm text-gray-600">
-      &copy; 2025 Leazo. All rights reserved.
-    </footer>
 
-    <!-- City Selection Modal with Icons -->
-<div id="cityModal" class="fixed inset-0 bg-black/50 flex items-center justify-center z-[9999]">
-  <div class="bg-white p-6 rounded-xl shadow-xl w-[90%] max-w-sm text-center relative z-50">
-    <h2 class="text-xl font-semibold mb-4">Choose Your City</h2>
+</body>
 
-    <div class="grid grid-cols-3 gap-4 mb-4">
-      <button type="button" class="city-btn flex flex-col items-center" data-city="Neemuch">
-        <img src="neemuch.png" class="w-13 h-13" alt="Neemuch" />
-        <span class="text-lg font-medium">Neemuch</span>
-      </button>
-      <button type="button" class="city-btn flex flex-col items-center" data-city="Mandsaur">
-        <img src="mandsaur.png" class="w-13 h-13" alt="Mandsaur" />
-        <span class="text-lg font-medium">Mandsaur</span>
-      </button>
-      <button type="button" class="city-btn flex flex-col items-center" data-city="Pratapgarh">
-        <img src="pratapgarh.png" class="w-13 h-13" alt="Pratapgarh" />
-        <span class="text-lg font-medium">Pratapgarh</span>
-      </button>
-    </div>
-
-    <p class="text-xs text-gray-500">We currently serve this region only.</p>
-  </div>
-</div>
-
-
-
-  </body>
 </html>
-
